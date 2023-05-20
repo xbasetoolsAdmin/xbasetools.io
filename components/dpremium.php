@@ -1,6 +1,5 @@
-
-
-
+<?php ob_start(); session_start(); date_default_timezone_set('UTC'); include "includes/config.php"; if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {    header("location: ../");    exit(); } $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']); ?>
+<script>
 function t() {
     $.ajax({
         type: "GET",
@@ -52,26 +51,35 @@ $(window).on("popstate", (function(t) {
             }), 1e3)
         }(t.trigger), t.clearSelection()
     }))
-})), $("#filterbutton").click((function() {
+})), 
+    $("#filterbutton").click((function() {
     $("#table tbody tr").each((function() {
-        var t = $.trim($(this).find("#account_country").text().toLowerCase()),
-            e = $.trim($(this).find("#account_sitename").text().toLowerCase()),
-            o = $.trim($(this).find("#account_seller").text().toLowerCase()),
-            i = $.trim($('select[name="account_country"]').val().toLowerCase()),
-            n = $.trim($('input[name="account_sitename"]').val().toLowerCase()),
-            l = $.trim($('select[name="account_seller"]').val().toLowerCase());
+	    
+        var 
+	    t = $.trim($(this).find("#country").text().toLowerCase()),
+            e = $.trim($(this).find("#sitename").text().toLowerCase()),
+            o = $.trim($(this).find("#seller").text().toLowerCase()),
+	    
+            i = $.trim($('select[name="country"]').val().toLowerCase()),
+            n = $.trim($('input[name="sitename"]').val().toLowerCase()),
+            l = $.trim($('select[name="seller"]').val().toLowerCase());
             
         t != i && "" != i || -1 == e.indexOf(n) || o != l && "" != l ? $(this).hide() : $(this).show()
         
     })), 
     $("#filterbutton").prop("disabled", !0) })), 
-    $(".filterselect").change((function() {
+    $(".filterselect").change((function()
+			       {
     $("#filterbutton").prop("disabled", !1) })),
-    $(".filterinput").keyup((function() {
-    $("#filterbutton").prop("disabled", !1)
-}));
+    $(".filterinput").keyup((function()
+			     {
+    $("#filterbutton").prop("disabled", !1) }));
+	
+	
 function buythistool(id){
-  bootbox.confirm("Are you sure?", function(result) {
+  bootbox.confirm("Are you sure?",
+		  
+function(result) {
         if(result ==true){
       $.ajax({
      method:"GET",
@@ -101,4 +109,4 @@ function openitem(order){
     }});
 
 }
-
+</script>
