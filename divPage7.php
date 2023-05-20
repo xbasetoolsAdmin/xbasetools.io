@@ -9,9 +9,9 @@ if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
     exit();
 }
 $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
+ include("cr.php");
+
 ?>
-
-
 
 
 </div>
@@ -30,10 +30,10 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
       <th scope="col">Buy</th>
     </tr>
 </thead>
+	
 <tbody>
-<?php
-include("cr.php");
-$q = mysqli_query($dbcon, "SELECT * FROM accounts WHERE sold='0' ORDER BY RAND()")or die(mysqli_error());
+	<?php 
+	$q = mysqli_query($dbcon, "SELECT * FROM accounts WHERE sold='0' ORDER BY RAND()")or die(mysqli_error());
  while($row = mysqli_fetch_assoc($q)){
 	 
 	 	 $countryfullname = $row['country'];
@@ -60,18 +60,5 @@ $q = mysqli_query($dbcon, "SELECT * FROM accounts WHERE sold='0' ORDER BY RAND()
 
  ?>
  </tbody>
-</table>
-	</tr>
-<tfoot>
-	   <tr>
-                    <th>field</th>
-                    <th>field</th>
-                    <th>field</th>
-                    <th>field</th>
-                    <th>field</th>
-                    <th>field</th>
-                    <th>field</th>
-                </tr>
-	</tfoot>
-  </table>
+</table> 
  
