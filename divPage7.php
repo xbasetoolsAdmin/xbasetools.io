@@ -15,19 +15,19 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 
 
    
-<div class="display"  table width="100%" table-hover table-responsive table-active sticky-header" id="table">
-<thead>
-    <tr>
-      <th scope="col" >Country</th>
-      <th scope="col">Site Name</th>
-      <th scope="col">Available Information</th>
-      <th scope="col">Seller</th>
-      <th scope="col">Price</th>
-      <th scope="col">Added on </th>
-      <th scope="col">Buy</th>
-    </tr>
-</thead>
-  <tbody>
+<table id="table" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>field</th>
+                    <th>field</th>
+                    <th>field</th>
+                    <th>field</th>
+                    <th>field</th>
+                    <th>field</th>
+                    <th>field</th>
+                </tr>
+                </thead>
+                <tbody>
  <?php
 include("cr.php");
 $q = mysqli_query($dbcon, "SELECT * FROM accounts WHERE sold='0' ORDER BY RAND()")or die(mysqli_error());
@@ -56,6 +56,18 @@ $q = mysqli_query($dbcon, "SELECT * FROM accounts WHERE sold='0' ORDER BY RAND()
  }
 
  ?>
+                </tbody>
+
 <tfoot>
+	   <tr>
+                    <th>field</th>
+                    <th>field</th>
+                    <th>field</th>
+                    <th>field</th>
+                    <th>field</th>
+                    <th>field</th>
+                    <th>field</th>
+                </tr>
+	</tfoot>
   </table>
  
