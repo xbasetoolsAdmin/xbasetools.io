@@ -235,7 +235,7 @@ include "mainDiv.php";
 </table>
 <script>
 $(document).ready(function() {
-$('#account_data').DataTable( {
+$("#account_data").DataTable( {
 "lengthMenu": [[10, 25, 100, 500, -1], [10, 25, 100, 500, "All"]],
 				'iDisplayLength': 1000,
 				"aaSorting": []
