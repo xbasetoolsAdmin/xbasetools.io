@@ -1,12 +1,18 @@
 <?php ob_start(); session_start(); date_default_timezone_set('UTC'); include "includes/config.php"; if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {    header("location: login.html");    exit(); } $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']); ?> <?php include "header.php";?>
-  <style type="text/css">
+
+		<!-- jQuery -->
+		<script src="https://code.jquery.com/jquery.js"></script>
+		<!-- Bootstrap JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<style type="text/css">
 .dropdown:hover>  .dropdown-menu {
 display: block; margin:0rem;
 			}
-			.dropdown > .dropdown-toggle:active {
-   				pointer-events: none;
+.dropdown > .dropdown-toggle:active {
+pointer-events: none;
 			}
-			#mydiv  {
+]#mydiv  {
 				height: 600px;
 				position: relative;
 			}
@@ -18,20 +24,9 @@ display: block; margin:0rem;
 				bottom: 0;
 				margin: auto; /* presto! */
 			}
-			body {
-    			padding-top:75px;
-			}
-			table.floatThead-table {
-			    border-top: none;
-			    border-bottom: none;
-			    background-color: #fff;
-			    cursor: pointer;
-			}
-			table th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_nosort):after { 
-			    content: " \25BE" 
-			}
 </style>
-	<style>
+
+<style>
 .display  td {
     background: var(--color-card);
       color: var(--font-color);
@@ -60,6 +55,7 @@ color: var(--font-color);
   color: var(--font-color);
 }
 </style>
+
 <body class="them">
 <style>
     .navbar-nav .dropdown-menu
