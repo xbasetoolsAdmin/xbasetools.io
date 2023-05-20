@@ -51,12 +51,12 @@
  
         }
         document.title = obj.Title;
-        $("#mainDiv").html('<div id="mydiv"><img src="files/img/load2.gif" class="ajax-loader"></div>').show();
+        $("#mainDiv.php").html('<div id="mydiv"><img src="files/img/load2.gif" class="ajax-loader"></div>').show();
         $.ajax({
             type: 'GET',
             url: 'divPage' + n + '.html',
             success: function(data) {
-                $("#mainDiv").html(data).show();
+                $("#mainDiv.php").html(data).show();
                 newTableObject = document.getElementById('table');
                 sorttable.makeSortable(newTableObject);
                 $(".sticky-header").floatThead({
