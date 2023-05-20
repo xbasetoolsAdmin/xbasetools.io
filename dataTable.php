@@ -20,7 +20,6 @@
     <title>Xbaseleet</title>
     
 <script type="text/javascript">
- 
     $(document).keydown(function(event) {
         if (event.which == "17")
             cntrlIsPressed = true;
@@ -107,68 +106,18 @@
             $(btn).tooltip('hide');
             console.log("hide-2");
         }, 1000);
-    }u
+    }
 </script>
-</head>
-
-<style>
-    #table {
-        .sortable
-    }
- 
-    table th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_nosort):after {
-        content: " \25BE"
-    }
- 
-    .label-as-badge {
-        border-radius: 0.5em;
-    }
- 
-    body {
-        padding-top: 50px;
-    }
- 
-    table.floatThead-table {
-        border-top: none;
-        border-bottom: none;
-        background-color: #fff;
-    }
- 
-    @media (min-width: 768px) {
-        .dropdown:hover .dropdown-menu {
-            display: block;
-        }
-    }
- 
-    #mydiv {
-        height: 400px;
-        position: relative;
-    }
- 
-    .ajax-loader {
-        position: absolute;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        margin: auto;
-        /* presto! */
- 
-    }
-</style>
 
 </head>
 
-<script>
- 
+
 
 <body>
   <nav class="navbar nabber-expand-sm navbar-light bg-light">
     <div class="container">
       <a class="navbar-brand" href="#">xbasetools</a>
-      
-      
-    </div>
+      </div>
   </nav>
   
 <style>
