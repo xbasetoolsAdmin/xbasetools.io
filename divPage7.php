@@ -14,7 +14,8 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 
 
 
-<table width="100%"  class="table table-striped table-bordered table-condensed sticky-header" id="table">
+   
+<div class="display"  table width="100%" table-hover table-responsive table-active sticky-header" id="table">
 <thead>
     <tr>
       <th scope="col" >Country</th>
