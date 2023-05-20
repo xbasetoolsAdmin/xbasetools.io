@@ -42,7 +42,7 @@
   <script src="js/jquery.datatables.min.js"></script>
   <script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
   <script src="layout/css/bootstrap.min.js"></script>
-  <script src="component/accounts.js"></script>
+<!---  <script src="component/accounts.js"></script> --->
 <script type=text/javascript">
 			     
 </script>									  
