@@ -141,4 +141,15 @@ $query = mysqli_query($dbcon, "SELECT DISTINCT(`resseller`) FROM `accounts` WHER
 </select></td><td><button id='filterbutton'class="btn btn-primary btn-sm" disabled>Filter <span class="glyphicon glyphicon-filter"></span></button></td></tr></tbody></table></div>
 </div>
 
-<div id="mainDiv"></div>
+<div id="mainDiv" width="100%" class="table table-striped table-bordered table-condensed sticky-header" id="table">
+<thead>
+    <tr>
+      <th scope="col" >Country</th>
+      <th scope="col">Site Name</th>
+      <th scope="col">Available Information</th>
+      <th scope="col">Seller</th>
+      <th scope="col">Price</th>
+      <th scope="col">Added on </th>
+      <th scope="col">Buy</th>
+    </tr>
+</thead>
