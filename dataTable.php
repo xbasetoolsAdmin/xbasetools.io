@@ -159,7 +159,6 @@
 
 </head>
 
-
 <script>
  
 
@@ -176,6 +175,8 @@
   
   
 </style>
+
+<?php include"mainDiv.php">
 
 
 
