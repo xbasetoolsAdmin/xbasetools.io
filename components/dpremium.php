@@ -33,16 +33,21 @@ $(window).on("popstate", (function(t) {
             Title: i,
             Url: n
         };
-        "/" + a.Url != location.pathname && (1 != l ? history.pushState(a, a.Title, a.Url) : history.replaceState(a, a.Title, a.Url)), document.title = a.Title, $("#mainDiv").html('<div id="mydiv"><img src="files/img/load2.gif" class="ajax-loader"></div>').show(), $.ajax({
+        "/" + a.Url != location.pathname && (1 != l ? history.pushState(a, a.Title, a.Url) : history.replaceState(a, a.Title, a.Url)), document.title = a.Title, 
+        
+$("#mainDiv").html('<div id="mydiv">
+<img src="files/img/load2.gif" class="ajax-loader"></div>').show(), 
+            
+            $.ajax({
             type: "GET",
             url: "divPage" + o + ".html",
             success: function(e) {
-                $("#mainDiv").html(e).show(), newTableObject = document.getElementById("table"), sorttable.makeSortable(newTableObject), $("table").floatThead({
-                    top: 60
-                }), 0 == l && t()
+$("#mainDiv").html(e).show(), newTableObject = document.getElementById("table"), //sorttable.makeSortable(newTableObject), 
+//$("account_data").r({top: 60 }),
+     0 == l && t()
             }
         }), "function" == typeof stopCheckBTC && stopCheckBTC()
-    }(7, "Premium/Dating/Shopping - JeruxShop", "table.html", 1), new Clipboard(".copyit").on("success", (function(t) {
+    }(7, "Premium - xBaseTools", "table.html", 1), new Clipboard(".copyit").on("success", (function(t) {
         var e, o;
         e = t.trigger, o = "Copied!", console.log("hide-1"), $(e).tooltip("hide").attr("data-original-title", o).tooltip("show"), console.log("show"),
         function(t) {
