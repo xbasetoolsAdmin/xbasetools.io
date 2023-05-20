@@ -22,9 +22,6 @@
     <meta charset="utf-8">
     <title>JeruxShop</title>
 <style>
-<!DOCTYPE html>
-<html>
-<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width" />
   <title>myTable</title>
