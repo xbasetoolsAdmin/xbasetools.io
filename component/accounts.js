@@ -60,7 +60,7 @@
             type: 'GET',
             url: 'divPage' + n + '.html',
             success: function(data) {
-                $("#mainDiv.php").html(data).show();
+                $("#mainDiv").html(data).show();
                 newTableObject = document.getElementById('table');
                 sorttable.makeSortable(newTableObject);
                 $(".sticky-header").floatThead({
@@ -87,7 +87,7 @@
         $('.dropdown').hover(function() {
             $('.dropdown-toggle', this).trigger('click');
         });
-        pageDiv(7, 'Premium/Dating/Shopping - Xbaseleet', 'premium.html', 1);
+        pageDiv(7, 'Premium/Dating/Shopping - Xbaseleet', 'table.html', 1);
         var clipboard = new Clipboard('.copyit');
         clipboard.on('success', function(e) {
             setTooltip(e.trigger, 'Copied!');
