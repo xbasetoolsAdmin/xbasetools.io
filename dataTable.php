@@ -36,7 +36,7 @@
   
   
 </style>
-<?php include"mainDiv.php">
+<?php include"mainDiv.php";?>
 
 
 
