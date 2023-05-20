@@ -14,21 +14,28 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 
 
 
-   
-<table id="table" class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                    <th>field</th>
-                    <th>field</th>
-                    <th>field</th>
-                    <th>field</th>
-                    <th>field</th>
-                    <th>field</th>
-                    <th>field</th>
-                </tr>
-                </thead>
-                <tbody>
- <?php
+</div>
+</div>
+<div class="row m-2 pt-3 " style="max-width:100%; color: var(--font-color); background-color: var(--color-card);">
+<div class="col-sm-12 table-responsive">
+<table id="table" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);">
+<thead>
+<tr>
+<th data-priority="1"></th>
+<th class="all">ID</th>
+<th data-priority="3">Website Name</th>
+<th data-priority="4">Country</th>
+<th data-priority="7">Details</th>
+<th data-priority="8">Price</th>
+<th data-priority="9">Seller</th>
+<th data-priority="10">Source</th>
+<th class="all">Proof</th>
+<th data-priority="11">Date Created</th>
+<th class="all">Buy</th>
+</tr>
+</thead>
+<tbody>
+<?php
 include("cr.php");
 $q = mysqli_query($dbcon, "SELECT * FROM accounts WHERE sold='0' ORDER BY RAND()")or die(mysqli_error());
  while($row = mysqli_fetch_assoc($q)){
@@ -56,8 +63,9 @@ $q = mysqli_query($dbcon, "SELECT * FROM accounts WHERE sold='0' ORDER BY RAND()
  }
 
  ?>
-                </tbody>
-
+ </tbody>
+</table>
+	</tr>
 <tfoot>
 	   <tr>
                     <th>field</th>
