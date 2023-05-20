@@ -38,7 +38,7 @@
  <script type="text/javascript" src="files/js/table-head.js?3334"></script>
  <script type="text/javascript" src="files/js/bootbox.min.js"></script>
  <script type="text/javascript" src="files/js/clipboard.min.js"></script>	
-<!---  <script src="component/accounts.js"></script> --->
+  <script src="component/accounts.js"></script>
 
 <script type="text/javascript">
 function ajaxinfo() {
