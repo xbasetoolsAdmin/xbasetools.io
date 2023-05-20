@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="layout/css/all.min.css" />
 
   <link rel="stylesheet" href="//cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" />
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 </head>
 <body>
