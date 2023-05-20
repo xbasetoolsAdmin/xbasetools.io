@@ -82,7 +82,14 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
              </div>
          </div>
      </div>
-    <script>
+«script>
+§(document).ready(function? {
+$(#account_data').DataTable {
+"lengthMenu": [[10, 25, 100, 500, -1], [10, 25, 100, 5
+'iDisplayLength': 1000,
+"aaSorting": [
+});
+});
 	function buythistool(id){
   bootbox.confirm("Are you sure?",
 		  
