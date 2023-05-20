@@ -20,7 +20,8 @@
 
 <title>JeruxShop</title>
 </head>
-
+	
+<body>
 
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
