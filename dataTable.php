@@ -81,137 +81,72 @@ table.floatThead-table {
   </div>
 </div>
 <script type="text/javascript">
-
-             function ajaxinfo() {
-                $.ajax({
-                    type: 'GET',
-                    url: 'ajaxinfo.html',
-                    timeout: 10000,
-
-                    success: function(data) {
-                        if (data != '01') {
-                            var data = JSON.parse(data);
-                            for (var prop in data) {
-                                $("#" + prop).html(data[prop]).show();
-                            }
-                        } else {
-                            window.location = "logout.html";
-                        }
-                    }
-                });
-
-            }
-            setInterval(function() {
-                ajaxinfo()
-            }, 3000);
-
-            ajaxinfo();
-
-$(document).keydown(function(event){
-    if(event.which=="17")
-        cntrlIsPressed = true;
-});
-
-$(document).keyup(function(){
-    cntrlIsPressed = false;
-});
-
-var cntrlIsPressed = false;
-
-
-function pageDiv(n,t,u,x){
-  if(cntrlIsPressed){
-    window.open(u, '_blank');
-    return false;
-  }
-        var obj = { Title: t, Url: u };
-        if ( ("/"+obj.Url) != location.pathname) {
-        	if (x != 1) {history.pushState(obj, obj.Title, obj.Url);}
-        	else{history.replaceState(obj, obj.Title, obj.Url);}
-
-    	}
-      document.title = obj.Title;
-    $("#mainDiv").html('<div id="mydiv"><img src="files/img/load2.gif" class="ajax-loader"></div>').show();
+function t() {
     $.ajax({
-    type:       'GET',
-    url:        'divPage'+n+'.html',
-    success:    function(data)
-    {
-        $("#mainDiv").html(data).show();
-        newTableObject = document.getElementById('table');
-        sorttable.makeSortable(newTableObject);
-        $("table").floatThead({top:60});
-        if(x==0){ajaxinfo();}
-      }});
-    if (typeof stopCheckBTC === 'function') { 
-    var a = stopCheckBTC();
-     }
-
+        type: "GET",
+        url: "ajaxinfo.html",
+        timeout: 1e4,
+        success: function(t) {
+            if ("01" != t) {
+                t = JSON.parse(t);
+                for (var e in t) $("#" + e).html(t[e]).show()
+            } else window.location = "logout.html"
+        }
+    })
 }
-
-$(window).on("popstate", function(e) {
-        location.replace(document.location);
-
-});
-
-
-$(window).on('load', function() {
-$('.dropdown').hover(function(){ $('.dropdown-toggle', this).trigger('click'); });
-   pageDiv(7,'Premium/Dating/Shopping - JeruxShop','table.html',1);
-   var clipboard = new Clipboard('.copyit');
-    clipboard.on('success', function(e) {
-      setTooltip(e.trigger, 'Copied!');
-      hideTooltip(e.trigger);
-      e.clearSelection();
-   });
-
-});
-
-
-function setTooltip(btn, message) {
-  console.log("hide-1");
-  $(btn).tooltip('hide')
-    .attr('data-original-title', message)
-    .tooltip('show');
-     console.log("show");
-}
-
-function hideTooltip(btn) {
-  setTimeout(function() {$(btn).tooltip('hide'); console.log("hide-2");}, 1000);
-}
-$('#filterbutton').click(function () {$("#table tbody tr").each(function() {var ck1 = $.trim( $(this).find("#account_country").text().toLowerCase() );var ck2 = $.trim( $(this).find("#account_sitename").text().toLowerCase() );var ck3 = $.trim( $(this).find("#account_seller").text().toLowerCase() ); var val1 = $.trim( $('select[name="account_country"]').val().toLowerCase() );var val2 = $.trim( $('input[name="account_sitename"]').val().toLowerCase() );var val3 = $.trim( $('select[name="account_seller"]').val().toLowerCase() ); if((ck1 != val1 && val1 != '' ) || ck2.indexOf(val2)==-1 || (ck3 != val3 && val3 != '' )){ $(this).hide();  }else{ $(this).show(); } });$('#filterbutton').prop('disabled', true);});$('.filterselect').change(function () {$('#filterbutton').prop('disabled', false);});$('.filterinput').keyup(function () {$('#filterbutton').prop('disabled', false);});
-function buythistool(id){
-  bootbox.confirm("Are you sure?", function(result) {
-        if(result ==true){
-      $.ajax({
-     method:"GET",
-     url:"buytool.php?id="+id+"&t=accounts",
-     dataType:"text",
-     success:function(data){
-         if(data.match(/<button/)){
-		 $("#account"+id).html(data).show();
-         }else{
-            bootbox.alert('<center><img src="files/img/balance.png"><h2><b>No enough balance !</b></h2><h4>Please refill your balance <a class="btn btn-primary btn-xs"  href="addBalance.html" onclick="window.open(this.href);return false;" >Add Balance <span class="glyphicon glyphicon-plus"></span></a></h4></center>')
-         }
-     },
-   });
-       ;}
-  });
-}
-
-function openitem(order){
-  $("#myModalLabel").text('Order #'+order);
-  $('#myModal').modal('show');
-  $.ajax({
-    type:       'GET',
-    url:        'showOrder'+order+'.html',
-    success:    function(data)
-    {
-        $("#modelbody").html(data).show();
-    }});
-
-}
-
+setInterval((function() {
+    t()
+}), 3e3), t(), $(document).keydown((function(t) {
+    "17" == t.which && (e = !0)
+})), $(document).keyup((function() {
+    e = !1
+}));
+var e = !1;
+$(window).on("popstate", (function(t) {
+    location.replace(document.location)
+})), $(window).on("load", (function() {
+    $(".dropdown").hover((function() {
+        $(".dropdown-toggle", this).trigger("click")
+    })),
+    function(o, i, n, l) {
+        if (e) return window.open(n, "_blank"), !1;
+        var a = {
+            Title: i,
+            Url: n
+        };
+        "/" + a.Url != location.pathname && (1 != l ? history.pushState(a, a.Title, a.Url) : history.replaceState(a, a.Title, a.Url)), document.title = a.Title, $("#mainDiv").html('<div id="mydiv"><img src="files/img/load2.gif" class="ajax-loader"></div>').show(), $.ajax({
+            type: "GET",
+            url: "divPage" + o + ".html",
+            success: function(e) {
+                $("#mainDiv").html(e).show(), newTableObject = document.getElementById("table"), sorttable.makeSortable(newTableObject), $("table").floatThead({
+                    top: 60
+                }), 0 == l && t()
+            }
+        }), "function" == typeof stopCheckBTC && stopCheckBTC()
+    }(7, "Premium/Dating/Shopping - JeruxShop", "table.html", 1), new Clipboard(".copyit").on("success", (function(t) {
+        var e, o;
+        e = t.trigger, o = "Copied!", console.log("hide-1"), $(e).tooltip("hide").attr("data-original-title", o).tooltip("show"), console.log("show"),
+        function(t) {
+            setTimeout((function() {
+                $(t).tooltip("hide"), console.log("hide-2")
+            }), 1e3)
+        }(t.trigger), t.clearSelection()
+    }))
+})), $("#filterbutton").click((function() {
+    $("#table tbody tr").each((function() {
+        var t = $.trim($(this).find("#account_country").text().toLowerCase()),
+            e = $.trim($(this).find("#account_sitename").text().toLowerCase()),
+            o = $.trim($(this).find("#account_seller").text().toLowerCase()),
+            i = $.trim($('select[name="account_country"]').val().toLowerCase()),
+            n = $.trim($('input[name="account_sitename"]').val().toLowerCase()),
+            l = $.trim($('select[name="account_seller"]').val().toLowerCase());
+        t != i && "" != i || -1 == e.indexOf(n) || o != l && "" != l ? $(this).hide() : $(this).show()
+    })), $("#filterbutton").prop("disabled", !0)
+})), $(".filterselect").change((function() {
+    $("#filterbutton").prop("disabled", !1)
+})), $(".filterinput").keyup((function() {
+    $("#filterbutton").prop("disabled", !1)
+}));
 </script>
 </body>
 </html>
