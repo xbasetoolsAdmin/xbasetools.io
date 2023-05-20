@@ -1,4 +1,5 @@
 <?php ob_start(); session_start(); date_default_timezone_set('UTC'); include "includes/config.php"; if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {    header("location: ../");    exit(); } $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']); ?>
+
 <script>
 function t() {
     $.ajax({
@@ -33,52 +34,50 @@ $(window).on("popstate", (function(t) {
             Title: i,
             Url: n
         };
-        "/" + a.Url != location.pathname && (1 != l ? history.pushState(a, a.Title, a.Url) : history.replaceState(a, a.Title, a.Url)), document.title = a.Title, 
-        
-$("#mainDiv").html('<div id="mydiv">
-<img src="files/img/load2.gif" class="ajax-loader"></div>').show(), 
-            
-            $.ajax({
+        "/" + a.Url != location.pathname && (1 != l ? history.pushState(a, a.Title, a.Url) : history.replaceState(a, a.Title, a.Url)), document.title = a.Title, $("#mainDiv").html('<div id="mydiv"><img src="files/img/load2.gif" class="ajax-loader"></div>').show(), $.ajax({
             type: "GET",
             url: "divPage" + o + ".html",
             success: function(e) {
-$("#mainDiv").html(e).show(), newTableObject = document.getElementById("table"), //sorttable.makeSortable(newTableObject), 
-//$("account_data").r({top: 60 }),
-     0 == l && t()
+                $("#mainDiv").html(e).show(), newTableObject = document.getElementById("table"), sorttable.makeSortable(newTableObject), $("document").ready({
+                    top: 60
+                }), 0 == l && t()
             }
         }), "function" == typeof stopCheckBTC && stopCheckBTC()
-    }(7, "Premium - xBaseTools", "table.html", 1), new Clipboard(".copyit").on("success", (function(t) {
+    }(7, "Premium/Dating/Shopping - JeruxShop", "table.html", 1), new Clipboard(".copyit").on("success", (function(t) {
         var e, o;
         e = t.trigger, o = "Copied!", console.log("hide-1"), $(e).tooltip("hide").attr("data-original-title", o).tooltip("show"), console.log("show"),
-        function(t) {
+        
+function(t) {
             setTimeout((function() {
                 $(t).tooltip("hide"), console.log("hide-2")
             }), 1e3)
         }(t.trigger), t.clearSelection()
     }))
-})), 
-    $("#filterbutton").click((function() {
-    $("#table tbody tr").each((function() {
-	    
-        var 
-	    t = $.trim($(this).find("#country").text().toLowerCase()),
+})),
+
+ $("#filterbutton").click((function() {
+ $("#table tbody tr").each((function() {
+        var t = $.trim($(this).find("#country").text().toLowerCase()),
             e = $.trim($(this).find("#sitename").text().toLowerCase()),
             o = $.trim($(this).find("#seller").text().toLowerCase()),
-	    
             i = $.trim($('select[name="country"]').val().toLowerCase()),
             n = $.trim($('input[name="sitename"]').val().toLowerCase()),
-            l = $.trim($('select[name="seller"]').val().toLowerCase());
-            
-        t != i && "" != i || -1 == e.indexOf(n) || o != l && "" != l ? $(this).hide() : $(this).show()
-        
-    })), 
-    $("#filterbutton").prop("disabled", !0) })), 
-    $(".filterselect").change((function()
-			       {
-    $("#filterbutton").prop("disabled", !1) })),
-    $(".filterinput").keyup((function()
-			     {
-    $("#filterbutton").prop("disabled", !1) }));
+            l = $.trim($('select[name="seller"]').val().toLowerCase());  t != i && "" != i || -1 == e.indexOf(n) || o != l && "" != l ? 
+
+$(this).hide() : $(this).show() })),
+
+$("#filterbutton").prop("disabled",!0)
+})),  
+
+$(".filterselect").change((function(){
+   
+$("#filterbutton").prop("disabled", !1)
+})), 
+
+$(".filterinput").keyup((function() {
+    
+$("#filterbutton").prop("disabled",!1)
+}));
 	
 	
 function buythistool(id){
