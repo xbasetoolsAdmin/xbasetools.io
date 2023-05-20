@@ -14,25 +14,25 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 ?>
 
 
-</div>
-</div>
-<div class="row m-2 pt-3 " style="max-width:100%; color: var(--font-color); background-color: var(--color-card);">
-<div class="col-sm-12 table-responsive">
-<table id="table" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);">
-<thead>
-    <tr>
-      <th scope="col" >Country</th>
-      <th scope="col">Site Name</th>
-      <th scope="col">Details</th>
-      <th scope="col">Seller</th>
-      <th scope="col">Price</th>
-      <th scope="col">Added on </th>
-      <th scope="col">Buy</th>
-    </tr>
-</thead>
-	
-<tbody>
-	<?php 
+
+     <div class="row m-2 pt-3 " style="max-width:100%; color: var(--font-color); background-color: var(--color-card);">
+         <div class="col-sm-12 table-responsive" id="mainDiv">
+             <table id="account_data" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);">
+                 <thead>
+                     <tr>
+                         <th scope="col"> </th>
+                         <th scope="col">ID</th>
+                         <th scope="col">Website</th>
+                         <!---<th scope="col">Site Name</th>- -->
+                         <th scope="col">Details</th>
+                         <th scope="col">Seller</th>
+                         <th scope="col">Price</th>
+                         <th scope="col">Created Date </th>
+                         <th scope="col">Buy</th>
+                     </tr>
+                 </thead>
+                <tbody>
+                <?php 
 	$q = mysqli_query($dbcon, "SELECT * FROM accounts WHERE sold='0' ORDER BY RAND()")or die(mysqli_error());
  while($row = mysqli_fetch_assoc($q)){
 	 
@@ -44,11 +44,14 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 			 $SellerNick = "seller".$rpw["id"]."";
      echo "
  <tr>     
-    <td id='account_country'><i class='flag-icon flag-icon-$countrycode'></i>&nbsp;".htmlspecialchars($row['country'])." </td>
-    <td id='account_sitename'> ".htmlspecialchars($row['sitename'])." </td> 
-	<td> ".htmlspecialchars($row['infos'])." </td>
-    <td id='account_seller'> ".htmlspecialchars($SellerNick)."</td>
-    <td> ".htmlspecialchars($row['price'])."</td>
+         <th>                      <th>
+    <td id='id'> ".($row['id'])." </td> 
+    <td id='country'><i class='flag-icon flag-icon-$countrycode'></i>&nbsp;".($row['country'])." </td>
+    <td id='sitename'> ".($row['sitename'])." </td> 
+	<td> ".($row['infos'])." </td>
+    <td id='seller'> ".($SellerNick)."</td>
+    <td id='country'><i class='flag-icon flag-icon-$countrycode'></i>&nbsp;".($row['id'])." </td>
+    <td> ".($row['price'])."</td>
 	    <td> ".$row['date']."</td>";
     echo '
     <td>
@@ -60,5 +63,23 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 
  ?>
  </tbody>
-</table> 
- 
+              </table>
+         </div>
+     </div>
+     </div>
+     </div>
+     </div>
+     </div>
+     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+         <div class="modal-dialog" role="document">
+             <div class="modal-content">
+                 <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                     <h4 class="modal-title" id="myModalLabel"></h4>
+                 </div>
+                 <div class="modal-body" id="modelbody"></div>
+                 <div class="modal-footer"><button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                 </div>
+             </div>
+         </div>
+     </div>
+	
