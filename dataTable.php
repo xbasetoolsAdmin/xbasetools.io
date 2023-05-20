@@ -28,7 +28,7 @@
 
 
 
-
+  <script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
   <script src="layout/css/bootstrap.min.js"></script>
   <script src="component/account.js"></script>
 </body>
