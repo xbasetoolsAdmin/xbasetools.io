@@ -20,7 +20,7 @@
 <script type="text/javascript" src="files/js/clipboard.min.js"></script>
 
 <script type="text/javascript" src="files/js/jquery.js"></script>
-<script type="text/javascript" src="component/accounts.js"></script>
+<!---<script type="text/javascript" src="component/accounts.js"></script>---->
             
 
 
