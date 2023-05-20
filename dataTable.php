@@ -140,13 +140,49 @@ $(window).on("popstate", (function(t) {
             i = $.trim($('select[name="account_country"]').val().toLowerCase()),
             n = $.trim($('input[name="account_sitename"]').val().toLowerCase()),
             l = $.trim($('select[name="account_seller"]').val().toLowerCase());
+            
         t != i && "" != i || -1 == e.indexOf(n) || o != l && "" != l ? $(this).hide() : $(this).show()
-    })), $("#filterbutton").prop("disabled", !0)
-})), $(".filterselect").change((function() {
-    $("#filterbutton").prop("disabled", !1)
-})), $(".filterinput").keyup((function() {
+        
+    })), 
+    $("#filterbutton").prop("disabled", !0) })), 
+    $(".filterselect").change((function() {
+    $("#filterbutton").prop("disabled", !1) })),
+    $(".filterinput").keyup((function() {
     $("#filterbutton").prop("disabled", !1)
 }));
+function buythistool(id){
+  bootbox.confirm("Are you sure?", function(result) {
+        if(result ==true){
+      $.ajax({
+     method:"GET",
+     url:"buytool.php?id="+id+"&t=accounts",
+     dataType:"text",
+     success:function(data){
+         if(data.match(/<button/)){
+		 $("#account"+id).html(data).show();
+         }else{
+            bootbox.alert('<center><img src="files/img/balance.png"><h2><b>No enough balance !</b></h2><h4>Please refill your balance <a class="btn btn-primary btn-xs"  href="addBalance.html" onclick="window.open(this.href);return false;" >Add Balance <span class="glyphicon glyphicon-plus"></span></a></h4></center>')
+         }
+     },
+   });
+       ;}
+  });
+}
+
+function openitem(order){
+  $("#myModalLabel").text('Order #'+order);
+  $('#myModal').modal('show');
+  $.ajax({
+    type:       'GET',
+    url:        'showOrder'+order+'.html',
+    success:    function(data)
+    {
+        $("#modelbody").html(data).show();
+    }});
+
+}
+
+
 </script>
 </body>
 </html>
