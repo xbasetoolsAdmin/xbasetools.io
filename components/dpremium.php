@@ -24,7 +24,8 @@ setInterval((function() {
 var e = !1;
 $(window).on("popstate", (function(t) {
     location.replace(document.location)
-})), $(window).on("load", (function() {
+})),
+ $(window).on("load", (function() {
     $(".dropdown").hover((function() {
         $(".dropdown-toggle", this).trigger("click")
     })),
@@ -38,12 +39,14 @@ $(window).on("popstate", (function(t) {
             type: "GET",
             url: "divPage" + o + ".html",
             success: function(e) {
-                $("#mainDiv").html(e).show(), newTableObject = document.getElementById("table"), sorttable.makeSortable(newTableObject), $("document").ready({
+                $("#mainDiv").html(e).show(), newTableObject = document.getElementById("table"), 
+//sorttable.makeSortable(newTableObject), 
+$("document").ready({
                     top: 60
                 }), 0 == l && t()
             }
         }), "function" == typeof stopCheckBTC && stopCheckBTC()
-    }(7, "Premium/Dating/Shopping - JeruxShop", "table.html", 1), new Clipboard(".copyit").on("success", (function(t) {
+    }(7, "Premium - JeruxShop", "table.html", 1), new Clipboard(".copyit").on("success", (function(t) {
         var e, o;
         e = t.trigger, o = "Copied!", console.log("hide-1"), $(e).tooltip("hide").attr("data-original-title", o).tooltip("show"), console.log("show"),
         
