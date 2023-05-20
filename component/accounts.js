@@ -3,7 +3,7 @@
     function ajaxinfo() {
         $.ajax({
             type: 'GET',
-            url: 'ajaxinfo.html',
+            url: '../ajaxinfo.html',
             timeout: 10000,
  
             success: function(data) {
