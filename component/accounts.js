@@ -55,7 +55,7 @@
  
         }
         document.title = obj.Title;
-        $("#mainDiv.ohp").html('<div id="mydiv"><img src="files/img/load2.gif" class="ajax-loader"></div>').show();
+        $("#mainDiv.php").html('<div id="mydiv"><img src="files/img/load2.gif" class="ajax-loader"></div>').show();
         $.ajax({
             type: 'GET',
             url: 'divPage' + n + '.html',
