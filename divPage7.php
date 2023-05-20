@@ -20,19 +20,15 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 <div class="col-sm-12 table-responsive">
 <table id="table" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);">
 <thead>
-<tr>
-<th data-priority="1"></th>
-<th class="all">ID</th>
-<th data-priority="3">Website Name</th>
-<th data-priority="4">Country</th>
-<th data-priority="7">Details</th>
-<th data-priority="8">Price</th>
-<th data-priority="9">Seller</th>
-<th data-priority="10">Source</th>
-<th class="all">Proof</th>
-<th data-priority="11">Date Created</th>
-<th class="all">Buy</th>
-</tr>
+    <tr>
+      <th scope="col" >Country</th>
+      <th scope="col">Site Name</th>
+      <th scope="col">Details</th>
+      <th scope="col">Seller</th>
+      <th scope="col">Price</th>
+      <th scope="col">Added on </th>
+      <th scope="col">Buy</th>
+    </tr>
 </thead>
 <tbody>
 <?php
