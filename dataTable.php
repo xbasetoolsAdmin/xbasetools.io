@@ -170,10 +170,25 @@ function hideTooltip(btn) {
                 background-color: #001f3f;
             }
         </style>
-<div id="mainDiv">
+<?php include"mainDiv.php";?>
 
 
-</div>
+
+
+
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="js/jquery.datatables.min.js"></script>
+  <script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+  <script src="layout/css/bootstrap.min.js"></script>
+  <script src="component/accounts.js"></script>
+  <script type=text/javascript">
+  
+  </script>
 </body>
 </html>
 
