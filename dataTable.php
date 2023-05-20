@@ -140,7 +140,7 @@ function pageDiv(n,t,u,x){
         $("#mainDiv").html(data).show();
         newTableObject = document.getElementById('table');
         sorttable.makeSortable(newTableObject);
-        $(".sticky-header").floatThead({top:60});
+        $("table").floatThead({top:60});
         if(x==0){ajaxinfo();}
       }});
     if (typeof stopCheckBTC === 'function') { 
