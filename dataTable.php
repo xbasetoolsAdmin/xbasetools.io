@@ -14,6 +14,12 @@
 <script src="files/js/bootbox.min.js"></script>
 <script src="files/js/clipboard.min.js"></script>
 
+<script src="component/accounts.js"></script>
+
+
+
+
+
 <link rel="shortcut icon" href="files/img/favicon.ico" />
 <meta http-equiv="X-UA-Compatible" content="IE=10; IE=9; IE=8; IE=7; IE=EDGE" /> 
  <meta name="referrer" content="no-referrer" />
