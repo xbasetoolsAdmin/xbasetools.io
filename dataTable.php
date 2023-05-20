@@ -23,7 +23,7 @@
 
 	
 	
-	</php
+	<?php
 	include "mainDiv.php";
 	?>	
 	
