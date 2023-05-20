@@ -71,6 +71,29 @@ include "mainDiv.php";
 
 
 ?>
+<div class="row m-2 pt-3 " style="max-width:100%; color: var(--font-color); background-color: var(--color-card);">
+<div class="col-sm-12 table-responsive" id="mainDiv">
+<table id="account_data" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);">
+<thead>
+    <tr>
+      <th scope="col" > </th>
+      <th scope="col">ID</th>
+      <th scope="col">Website</th>
+  <!---<th scope="col">Site Name</th>- -->
+      <th scope="col">Details</th>
+      <th scope="col">Seller</th>
+      <th scope="col">Price</th>
+      <th scope="col">Created  Date </th>
+      <th scope="col">Buy</th>
+    </tr>
+</thead>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document"><div class="modal-content">
       <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>  <h4 class="modal-title" id="myModalLabel"></h4></div>
