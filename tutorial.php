@@ -520,7 +520,7 @@
     <div class="row m-2 pt-3 " style="max-width:100%; color: var(--font-color); background-color: var(--color-card);">
         <div class="col-sm-12 table-responsive" id="mainDiv">
             <table id="datatables" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);"></div>
-    <script type="text/javascript" src="components/main.js"></script>
+
     
 
 
