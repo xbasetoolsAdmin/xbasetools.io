@@ -1,367 +1,165 @@
-<?php ob_start(); session_start(); date_default_timezone_set('UTC'); include "includes/config.php"; if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {    header("location: ../");    exit(); } $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']); ?>
-<!DOCTYPE html><html lang=""><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Xbasetools</title><link rel="stylesheet" href="layout/css/bootstrap.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="layout/js/clipboard.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script><script src="layout/js/bootstrap.min.js"></script><script src="layout/js/bootbox.min.js"></script><link rel="stylesheet" type="text/css" href="files/css/flags.css"/><link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"><link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.dataTables.min.css"><link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css"><script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script><script src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script><script src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script><script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.colVis.min.js"></script><script src="js/jquery.dataTables.min.js"></script><link href="//cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet"><script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script><script async src="//www.googletagmanager.com/gtag/js?id=UA-177092549-1"></script><script>window.dataLayer=window.dataLayer || []; function gtag(){dataLayer.push(arguments);}gtag('js', new Date()); gtag('set',{'$usrid': 'USER_ID'}); // Set the user ID using signed-in user_id. gtag('config', 'UA-177092549-1'); </script><link rel="stylesheet" href="layout/css/all.min.css"/><link rel="stylesheet" href="layout/css/main.css?v=12.9"/><link rel="stylesheet" href="layout/css/util.css"/><style>body{padding-top:80px}</style><link rel="stylesheet" href="layout/fonts/iconic/css/material-design-iconic-font.min.css"><script src="layout/js/main.js"></script><script type="text/javascript">// Notice how this gets configured before we load Font Awesome window.FontAwesomeConfig={autoReplaceSvg: false}</script><style>@import url(//fonts.googleapis.com/css?family=Roboto:400); .navbar-nav .dropdown-menu{margin:0 !important}</style>
+<?php
+ob_start();
+session_start();
+error_reporting();
+date_default_timezone_set('UTC');
+include "includes/config.php";
+
+if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
+    header("location: ../");
+    exit();
+}
+?>
+<script>
+function sendt(id){
+
+    var sub = $("#subject"+id).val();
+    var msg = $("#msg"+id).val();
+    var pr = $("#proi"+id).val();
+     $.ajax({
+     method:"GET",
+     url:"CreateReport.html?id="+id+"&m="+btoa(msg),
+     dataType:"text",
+     success:function(data){
+     $("#resulta"+id).html(data).show();
+     },
+   });
+}
+
+    </script>
+<div class="well well">
+<h2><center><small><font color="#080C39"><span class="glyphicon glyphicon-shopping-cart"></span></small></font> My Orders	</h2>
+<p align="center">You can only report a bad tool within <b>10 hours</b> by clicking on <a class="btn btn-primary btn-xs"><font color=white>Report #[Order Id]</a></font> , Otherwise we can't give you refund or replacement!</p>
+                    </div>
+
+<table width="100%" class="table table-striped table-bordered table-condensed" id="table">
+						
+					<thead>
+            <tr>
+  <th scope="col">ID</th>
+  <th scope="col">Type</th>
+  <th scope="col">Item</th>
+  <th scope="col">Open</th>
+  <th scope="col">Price</th>
+  <th scope="col">Seller</th>
+  <th scope="col">Report</th>
+   <th scope="col">Date</th>
+            </tr>
+        </thead>
+ <tbody id='tbody2'>
+ <?php
+$real_data = date("Y-m-d H:i:s");
+$usrid     = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
+$q = mysqli_query($dbcon, "SELECT * FROM purchases WHERE buyer='$usrid' ORDER BY id DESC") or die(mysql_error());
+
+while ($row = mysqli_fetch_assoc($q)) {
+    $idorder   = $row['id'];
+    $toollink1 = $row['url'];
+    $sidd      = $row['s_id'];
+    $type      = $row['type'];
+    $info      = $row['url'];
+    $desc      = $row['infos'];
+    echo "<tr>
+	    <td> " . $row['id'] . " </td>
+    <td> " . strtoupper($row['type']) . " </td>
+    <td> " . $row['url'] . " </td>";
+?>
+    <td> 
+<button onclick="openitem(<?php echo $idorder; ?>)" class="btn btn-primary btn-xs"> Open #<?php echo $idorder; ?></button>
+
+    <?php
+	 	 	    $qer = mysqli_query($dbcon, "SELECT * FROM resseller WHERE username='".$row['resseller']."'")or die(mysql_error());
+		   while($rpw = mysqli_fetch_assoc($qer))
+			 $SellerNick = "seller".$rpw["id"]."";
+    echo "
+    <td> " . $row['price'] . "</td>
+	    <td> " . $SellerNick . "</td>
+    <td> ";
+	$pending= 0;
+    $date_purchased = $row['date'];
+    $endTime        = strtotime("+600 minutes", strtotime($date_purchased));
+    $data_plus      = date('Y-m-d H:i:s', $endTime);
+    if (($real_data > $data_plus) && ($row['reported'] == "")) {
+        echo 'Time expired';
+    } else {
+        if ($row['reported'] == "1") {
+            $qrrr = mysqli_query($dbcon, "SELECT * FROM reports WHERE s_id='$sidd' and uid='$usrid'") or die(mysqli_error());
+            while ($rowe = mysqli_fetch_assoc($qrrr)) {
+                $idreport = $rowe['id'];
+                echo "<font color='green'><a href='vr-$idreport.html'><u>#$idreport</u></font></a>";
+            }
+        } else {
+            echo '<a data-toggle="modal" class="btn btn-primary btn-xs" data-target="#myModald' . $row["id"] . '" >
+<font color=white>Report #[' . $idorder . '] </a></center>';
+        }
+    }
+    echo "</td>
+		    <td> " . $row['date'] . "</td>
+    </tr>";
     
-</head> 
-<body class="them">
-<style>
-.navbar-nav .dropdown-menu{margin:0!important}.theme-light{--color-primary:#0060df;--color-secondary:#fff;--color-secondary2:#ecf0f1;--color-accent:#fd6f53;--font-color:#000;--color-nav:#fff;--color-dropdown:#fff;--color-card:#fff;--color-card2:#d1ecf1;--color-info:#0c5460;--color-backinfo:#d1ecf1;--color-borderinfo:#bee5eb}.theme-dark{--color-primary:#17ed90;--color-secondary:#353b50;--color-secondary2:#353b50;--color-accent:#12cdea;--font-color:#fff;--color-nav:#363947;--color-dropdown:rgba(171,205,239,.3);--color-card:#262a37;--color-card2:#262a37;--color-info:#4dd0e1;--color-backinfo:#262a37;--color-borderinfo:#262a37}.them{background:var(--color-secondary);flex-direction:column;justify-content:center;align-items:center}.them h1{color:var(--font-color);font-family:sans-serif}.card-body{color:var(--font-color)}.them button{color:var(--font-color);background-color:#fff;padding:10px 20px;border:0;border-radius:5px}.navbar.navbar-light .navbar-toggler{color:var(--font-color)}.switch{position:relative;display:inline-block;width:60px;height:34px}.switch input{opacity:0;width:0;height:0}.slider{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background-color:#ccc;-webkit-transition:.4s;transition:.4s}.slider:before{position:absolute;content:"";height:40px;width:40px;left:0;bottom:4px;top:0;bottom:0;margin:auto 0;-webkit-transition:.4s;transition:.4s;box-shadow:0 0 15px #2020203d;background:#fff url('https://i.ibb.co/FxzBYR9/night.png');background-repeat:no-repeat;background-position:center}input:checked+.slider{background-color:#2196f3}input:focus+.slider{box-shadow:0 0 1px #2196f3}input:checked+.slider:before{-webkit-transform:translateX(24px);-ms-transform:translateX(24px);transform:translateX(24px);background:#fff url('https://i.ibb.co/7JfqXxB/sunny.png');background-repeat:no-repeat;background-position:center}.slider.round{border-radius:34px}.slider.round:before{border-radius:50%}</style>
-<script>
-function e(e){localStorage.setItem("theme",e),document.documentElement.className=e}"theme-dark"===localStorage.getItem("theme")?(e("theme-dark"),document.getElementById("slider").checked=!1):(e("theme-light"),document.getElementById("slider").checked=!0);
-  </script>
-    <style>.modal-dialog.modal-frame.modal-top.modal-notify.modal-danger .modal-body,.modal-dialog.modal-frame.modal-top.modal-offernov.modal-danger .modal-body{padding-top:35px}.modal-dialog.modal-frame.modal-top.modal-notify.modal-danger,.modal-dialog.modal-frame.modal-top.modal-offernov.modal-danger{max-width:500px!important;margin:1.75rem auto!important;position:relative;width:auto!important;pointer-events:none}a.closearb{position:absolute;top:2.5px;right:2.5px;display:block;width:30px;height:30px;text-indent:-9999px;background-size:contain;background-repeat:no-repeat;background-position:center center;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAAXNSR0IArs4c6QAAA3hJREFUaAXlm8+K00Acx7MiCIJH/yw+gA9g25O49SL4AO3Bp1jw5NvktC+wF88qevK4BU97EmzxUBCEolK/n5gp3W6TTJPfpNPNF37MNsl85/vN/DaTmU6PknC4K+pniqeKJ3k8UnkvDxXJzzy+q/yaxxeVHxW/FNHjgRSeKt4rFoplzaAuHHDBGR2eS9G54reirsmienDCTRt7xwsp+KAoEmt9nLaGitZxrBbPFNaGfPloGw2t4JVamSt8xYW6Dg1oCYo3Yv+rCGViV160oMkcd8SYKnYV1Nb1aEOjCe6L5ZOiLfF120EjWhuBu3YIZt1NQmujnk5F4MgOpURzLfAwOBSTmzp3fpDxuI/pabxpqOoz2r2HLAb0GMbZKlNV5/Hg9XJypguryA7lPF5KMdTZQzHjqxNPhWhzIuAruOl1eNqKEx1tSh5rfbxdw7mOxCq4qS68ZTjKS1YVvilu559vWvFHhh4rZrdyZ69Vmpgdj8fJbDZLJpNJ0uv1cnr/gjrUhQMuI+ANjyuwftQ0bbL6Erp0mM/ny8Fg4M3LtdRxgMtKl3jwmIHVxYXChFy94/Rmpa/pTbNUhstKV+4Rr8lLQ9KlUvJKLyG8yvQ2s9SBy1Jb7jV5a0yapfF6apaZLjLLcWtd4sNrmJUMHyM+1xibTjH82Zh01TNlhsrOhdKTe00uAzZQmN6+KW+sDa/JD2PSVQ873m29yf+1Q9VDzfEYlHi1G5LKBBWZbtEsHbFwb1oYDwr1ZiF/2bnCSg1OBE/pfr9/bWx26UxJL3ONPISOLKUvQza0LZUxSKyjpdTGa/vDEr25rddbMM0Q3O6Lx3rqFvU+x6UrRKQY7tyrZecmD9FODy8uLizTmilwNj0kraNcAJhOp5aGVwsAGD5VmJBrWWbJSgWT9zrzWepQF47RaGSiKfeGx6Szi3gzmX/HHbihwBser4B9UJYpFBNX4R6vTn3VQnez0SymnrHQMsRYGTr1dSk34ljRqS/EMd2pLQ8YBp3a1PLfcqCpo8gtHkZFHKkTX6fs3MY0blKnth66rKCnU0VRGu37ONrQaA4eZDFtWAu2fXj9zjFkxTBOo8F7t926gTp/83Kyzzcy2kZD6xiqxTYnHLRFm3vHiRSwNSjkz3hoIzo8lCKWUlg/YtGs7tObunDAZfpDLbfEI15zsEIY3U/x/gHHc/G1zltnAgAAAABJRU5ErkJggg==)}
-</style>
-    <nav class="navbar navbar-expand-xl navbar  navbar-light " style="
-                                                          position:fixed;
-                                                          background-color: var(--color-nav);
-                                                          z-index:1;
-                                                          top:0;
-                                                          left:0;
-                                                          right:0;
-                                                          line-height: 1.5;
-                                                          font-family: 'Lato', sans-serif;
-                                                          font-size: 15px;
-                                                          padding-top: 0.5rem;
-                                                          padding-right: 1rem;
-                                                          padding-bottom: 0.5rem;
-                                                          padding-left: 1rem;
-                                                        ">
+    echo '
+ 
+<div class="modal fade" id="myModald' . $row['id'] . '" >
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" id="myModalLabel">
+                                              Report Form
+                                            </h4>
+                                        </div>
+                                        <div class="modal-body">
+<div class="well well-sm">
+  <h4><b>Report Of Order #' . $row['id'] . ' </b></h4>
+  <p>Please write clearly what is wrong with this <b>'.$row['type'].'</b> and why you want to refund it</p>
+</div>
+<div id="resulta' . $row['id'] . '">
+<div class="input-group">
+    <textarea id="msg' . $row['id'] . '"  class="form-control custom-control" rows="3" name="memo" style="resize:none" required=""></textarea>     
+    <span id="xreport" class="input-group-addon btn btn-primary" onclick="this.disabled=true;javascript:sendt(' . $row['id'] . ');">Submit</span>
+</div>
+</div>
+</div>
+<div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+';
+    
+    
+}
+?>
 
-        <a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-mail-bulk fa-sm pink-color"></i> Leads
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-left" style="color: var(--font-color); background-color: var(--color-nav);" aria-labelledby="navbarDropdown">
-                      
-                        <a class="dropdown-item" href="rdp" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-desktop fa-fw"></i> RDPs <span class="badge badge-primary">60</span></span></a>
-                        <a class="dropdown-item" href="cPanel" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-tools fa-fw"></i> cPanels <span class="badge badge-primary">16928</span></span></a>
-                        <a class="dropdown-item" href="shell" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-file-code fa-fw"></i> Shells <span class="badge badge-primary">1741</span></span></a>
-                         <a class="dropdown-item" href="banks" style="color: var(--font-color);"><span class="px-2"><i class="fab fa-battle-net"></i> Combo Username:Password <span class="badge badge-primary">1</span></span></a>
-                        <a class="dropdown-item" href="mailer" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-leaf fa-fw"></i> Mailers <span class="badge badge-primary">394</span></span></a>
-                        <a class="dropdown-item" href="smtp" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-envelope fa-fw"></i> SMTPs <span class="badge badge-primary">2518</span></span></a>
-                        <a class="dropdown-item" href="tutorial" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-phone-square"></i> Banks/tutorial:methods <span class="badge badge-primary">3</span></span></a>
-                        <a class="dropdown-item" href="scampage" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-inbox"></i> Full Data <span class="badge badge-primary">0</span></span></a>
-                        <a class="dropdown-item" href="premium" style="color: var(--font-color);"><span class="px-2"><i class="fab fa-facebook"></i> Social Media Data <span class="badge badge-primary">0</span></span></a>
-                    </div>
-                </li>
-                    </div>
-                </li>
-                    </div>
-                </li>
-                    </div>
-                </li>
- <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> xbaseleets <i class="fa fa-user-secret" style="color: var(--font-color);"></i></a> </a> <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="color: var(--font-color); background-color: var(--color-nav);"> <a class="dropdown-item" href="setting" style="color: var(--font-color);"><span class="px-2">Setting <i class="fa fa-cog"></i></span></a> <a class="dropdown-item" href="seller-profile" style="color: var(--font-color);"><span class="px-2">Profile <i class="fa fa-user"></i></span></a> <a class="dropdown-item" href="orders" style="color: var(--font-color);"><span class="px-2">My Orders <i class="fa fa-shopping-cart"></i></span></a> <a class="dropdown-item" href="addBalance" style="color: var(--font-color);"><span class="px-2">Add Balance <i class="fa fa-money-bill-alt"></i></span></a> <a class="dropdown-item" href="logout" style="color: var(--font-color);"><span class="px-2">Logout <i class="fa fa-door-open"></i></span></a> </div></li></ul> </div></nav>
-<style>
-.display  td {
-    background: var(--color-card);
-      color: var(--font-color);
-}
-.dataTables_wrapper .dataTables_paginate .paginate_button {
-    color: var(--font-color);
-}
-#account_data_paginate .paginate_button {
-color: var(--font-color);
-}
-.alert-info {
-    color: var(--color-info);
-    background-color: var(--color-backinfo);
-    border-color: var(--color-borderinfo);
-}
-#account_data_filter{
-  color: var(--font-color);
-}
-#account_data_length{
-  color: var(--font-color);
-}
-#account_data_paginate{
-  color: var(--font-color);
-}
-#account_data_info{
-  color: var(--font-color);
-}
-</style>
+ </tbody>
+ </table>
+</div>
 
-<body class="them">
-<style>
-    .navbar-nav .dropdown-menu
+
+<script type="text/javascript">
+function openitem(order){
+  $("#myModalHeader").text('Order #'+order);
+  $('#myModal').modal('show');
+  $.ajax({
+    type:       'GET',
+    url:        'showOrder'+order+'.html',
+    success:    function(data)
     {
-      margin:0 !important
-    }
-    .theme-light {
-  --color-primary: #0060df;
-  --color-secondary: #ffffff;
-   --color-secondary2: #ecf0f1;
-  --color-accent: #fd6f53;
-  --font-color: #000000;
-  --color-nav: #ffffff;
-  --color-dropdown: #ffffff;
-  --color-card: #ffffff;
-   --color-card2: #d1ecf1;
-  --color-info: #0c5460;
-  --color-backinfo: #d1ecf1;
-  --color-borderinfo: #bee5eb;
+        $("#modelbody").html(data).show();
+    }});
 
 }
-.theme-dark {
-  --color-primary: #17ed90;
-  --color-secondary: #353B50;
-  --color-secondary2: #353B50;
-  --color-accent: #12cdea;
-  --font-color: #ffffff;
-  --color-nav: #363947;
-  --color-dropdown: rgba(171, 205, 239, 0.3);
-  --color-card: #262A37;
-   --color-card2: #262A37;
-   --color-info: #4DD0E1;
-  --color-backinfo: #262A37;
-  --color-borderinfo: #262A37;
-}
-.them {
-
-  background: var(--color-secondary);
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.them h1 {
-  color: var(--font-color);
-  font-family: sans-serif;
-}
-.card-body {
-     color: var(--font-color);
-    }
-.them button {
-  color: var(--font-color);
-  background-color: #ffffff;
-  padding: 10px 20px;
-  border: 0;
-  border-radius: 5px;
-}
-.navbar.navbar-light .navbar-toggler {
-    color: var(--font-color);
-}
-
-/* The switch - the box around the slider */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 40px;
-  width: 40px;
-  left: 0px;
-  bottom: 4px;
-  top: 0;
-  bottom: 0;
-  margin: auto 0;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-  box-shadow: 0 0px 15px #2020203d;
-  background: white url('https://i.ibb.co/FxzBYR9/night.png');
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-input:checked + .slider {
-  background-color: #2196f3;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(24px);
-  -ms-transform: translateX(24px);
-  transform: translateX(24px);
-  background: white url('https://i.ibb.co/7JfqXxB/sunny.png');
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
-  </style>
-<?php
+</script>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title" id="myModalHeader"></h4>
+      </div>
+      <div class="modal-body" id="modelbody">
 
 
-
-
-include "navbar_header.php";
-
-
-
-
-?>
-<style>
-.modal-dialog.modal-frame.modal-top.modal-notify.modal-danger .modal-body,.modal-dialog.modal-frame.modal-top.modal-offernov.modal-danger .modal-body{
-	    padding-top: 35px;
-}
-.modal-dialog.modal-frame.modal-top.modal-notify.modal-danger,.modal-dialog.modal-frame.modal-top.modal-offernov.modal-danger {
-    max-width: 500px !important;
-    margin: 1.75rem auto !important;
-    position: relative;
-    width: auto !important;
-    pointer-events: none;
-}
-a.closearb {
-    position: absolute;
-    top: 2.5px;
-    right: 2.5px;
-    display: block;
-    width: 30px;
-    height: 30px;
-    text-indent: -9999px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAAXNSR0IArs4c6QAAA3hJREFUaAXlm8+K00Acx7MiCIJH/yw+gA9g25O49SL4AO3Bp1jw5NvktC+wF88qevK4BU97EmzxUBCEolK/n5gp3W6TTJPfpNPNF37MNsl85/vN/DaTmU6PknC4K+pniqeKJ3k8UnkvDxXJzzy+q/yaxxeVHxW/FNHjgRSeKt4rFoplzaAuHHDBGR2eS9G54reirsmienDCTRt7xwsp+KAoEmt9nLaGitZxrBbPFNaGfPloGw2t4JVamSt8xYW6Dg1oCYo3Yv+rCGViV160oMkcd8SYKnYV1Nb1aEOjCe6L5ZOiLfF120EjWhuBu3YIZt1NQmujnk5F4MgOpURzLfAwOBSTmzp3fpDxuI/pabxpqOoz2r2HLAb0GMbZKlNV5/Hg9XJypguryA7lPF5KMdTZQzHjqxNPhWhzIuAruOl1eNqKEx1tSh5rfbxdw7mOxCq4qS68ZTjKS1YVvilu559vWvFHhh4rZrdyZ69Vmpgdj8fJbDZLJpNJ0uv1cnr/gjrUhQMuI+ANjyuwftQ0bbL6Erp0mM/ny8Fg4M3LtdRxgMtKl3jwmIHVxYXChFy94/Rmpa/pTbNUhstKV+4Rr8lLQ9KlUvJKLyG8yvQ2s9SBy1Jb7jV5a0yapfF6apaZLjLLcWtd4sNrmJUMHyM+1xibTjH82Zh01TNlhsrOhdKTe00uAzZQmN6+KW+sDa/JD2PSVQ873m29yf+1Q9VDzfEYlHi1G5LKBBWZbtEsHbFwb1oYDwr1ZiF/2bnCSg1OBE/pfr9/bWx26UxJL3ONPISOLKUvQza0LZUxSKyjpdTGa/vDEr25rddbMM0Q3O6Lx3rqFvU+x6UrRKQY7tyrZecmD9FODy8uLizTmilwNj0kraNcAJhOp5aGVwsAGD5VmJBrWWbJSgWT9zrzWepQF47RaGSiKfeGx6Szi3gzmX/HHbihwBser4B9UJYpFBNX4R6vTn3VQnez0SymnrHQMsRYGTr1dSk34ljRqS/EMd2pLQ8YBp3a1PLfcqCpo8gtHkZFHKkTX6fs3MY0blKnth66rKCnU0VRGu37ONrQaA4eZDFtWAu2fXj9zjFkxTBOo8F7t926gTp/83Kyzzcy2kZD6xiqxTYnHLRFm3vHiRSwNSjkz3hoIzo8lCKWUlg/YtGs7tObunDAZfpDLbfEI15zsEIY3U/x/gHHc/G1zltnAgAAAABJRU5ErkJggg==);
-}
-</style> <div class="d-flex flex-row-reverse mt-0">
-<div class="p-2">
-<label id="switch" class="switch">
-<input type="checkbox" onchange="toggleTheme()" id="slider">
-<span class="slider round">
-</span>
-</label>
-</div>
-<?php
-
-
-
-
-include "mainDiv.php";
-
-
-
-
-?>
-<div class="row m-2 pt-3 " style="max-width:100%; color: var(--font-color); background-color: var(--color-card);">
-<div class="col-sm-12 table-responsive" id="mainDiv">
-<table id="mailer_data" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);">
-
-
-
-</table>
-<script>
-$(document).ready(function() {
-$("#mailer_data").DataTable( {
-"lengthMenu": [[10, 25, 100, 500, -1], [10, 25, 100, 500, "All"]],
-				'iDisplayLength': 1000,
-				"aaSorting": []
-			} );
-		} );
-		</script>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document"><div class="modal-content">
-      <div class="modal-header"> <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>  <h4 class="modal-title" id="myModalLabel"></h4></div>
-      <div class="modal-body" id="modelbody"></div>
-      <div class="modal-footer"><button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
-</div>
-
-<?php
-
-
-include "components/dpremium.php";
-
-?>
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="true">
-<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-notify modal-success" role="document">
-<div class="modal-content">
-<div class="modal-header">
-<p class="heading" id="myModalHeader"></p>
-<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-<span aria-hidden="true" class="white-text">&times;</span>
-</button>
-</div>
-<div class="modal-body" id="modelbody">
-</div>
-<div class="modal-footer justify-content-center">
-<a type="button" class="btn btn-outline-success waves-effect" data-dismiss="modal">Close</a>
-</div>
-</div>
-</div>
-</div>
-
-<div class="modal fade" id="modalConfirmBuy" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog modal-dialog-centered modal-sm modal-notify modal-info" role="document">
-
-<div class="modal-content text-center">
-
-<div class="modal-header d-flex justify-content-center">
-<p class="heading">Are you sure?</p>
-</div>
-
-<div class="modal-body">
-<i class='fas fa-shopping-cart fa-4x animated rotateIn'></i>
-</div>
-
-<div class="modal-footer flex-center">
-<a onClick='confirmbye()' class="btn btn-outline-info waves-effect" data-dismiss="modal">Yes</a>
-<a type="button" class="btn btn-info" data-dismiss="modal">No</a>
-</div>
-</div>
-
-</div>
-</div>
-
-
-<div class="modal fade top" id="modalCoupon" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="true">
-<div class="modal-dialog modal-frame modal-top modal-notify modal-danger" role="document">
-
-<div class="modal-content">
-
-<div class="modal-body">
-<div class="row d-flex justify-content-center align-items-center">
-<img src="layout/images/balance.png">
-<span class="pt-3 mx-4" style="font-size: 14 px"><b>No enough balance !</b> Please refill your balance</span>
-<a type="button" href="addBalance" onclick="window.open(this.href);return false;" class="btn btn-danger">Add Balance
-<i class="fas fa-book ml-1 white-text"></i>
-</a>
-<a type="button" class="btn btn-outline-danger waves-effect" data-dismiss="modal">No, thanks</a>
-</div>
-</div>
-</div>
-
-</div>
-</div>
-</body>
-</html>
