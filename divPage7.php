@@ -141,7 +141,8 @@ $(document).ready( function() {
     }
   } );
 } );
-
+</script>
+<script>
                           "columns": [
                                 { "data": 0 },
                                 { "data": 1 },
