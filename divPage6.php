@@ -142,7 +142,7 @@
  
     }
  
-    #deposit_data_paginate .paginate_button {
+    #lead_data_paginate .paginate_button {
         color: var(--font-color);
  
     }
@@ -154,19 +154,17 @@
  
     }
  
-    #deposit_data_filter {
+    #lead_data_filter {
         color: var(--font-color);
     }
  
-    #deposit_data_length {
+    #lead_data_length {
         color: var(--font-color);
     }
  
-    #deposit_data_paginate {
+    #lead_data_paginate {
         color: var(--font-color);
-    }
- 
-    #deposit_data_info {
+ lead_   #lead_data_info {
         color: var(--font-color);
     }
 </style>
@@ -505,10 +503,9 @@
     </div>
  
     <div style="padding-left:20px; display:inline-block; margin-bottom:10px">
-      
     <div class="row m-2 pt-3 " style="max-width:100%; color: var(--font-color); background-color: var(--color-card);">
    <div class="col-sm-12 table-responsive" id="disPlay">
-            <table id="" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);">
+            <table id="lead" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);">
                 <thead>
                     <tr>
                         <th data-priority="1"></th>
