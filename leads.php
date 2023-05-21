@@ -54,5 +54,132 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 			</table>
 
 		</div>
+		<script>
+			(function($){
+
+$(document).ready(function() {
+	var editor = new DataTable.Editor( {
+		ajax: 'php/table.accounts.php',
+		table: '#accounts',
+		fields: [
+			{
+				"label": "acctype:",
+				"name": "acctype"
+			},
+			{
+				"label": "country:",
+				"name": "country"
+			},
+			{
+				"label": "infos:",
+				"name": "infos"
+			},
+			{
+				"label": "price:",
+				"name": "price"
+			},
+			{
+				"label": "url:",
+				"name": "url"
+			},
+			{
+				"label": "sold:",
+				"name": "sold"
+			},
+			{
+				"label": "sto:",
+				"name": "sto"
+			},
+			{
+				"label": "dateofsold:",
+				"name": "dateofsold"
+			},
+			{
+				"label": "date:",
+				"name": "date"
+			},
+			{
+				"label": "resseller:",
+				"name": "resseller"
+			},
+			{
+				"label": "reported:",
+				"name": "reported"
+			},
+			{
+				"label": "sitename:",
+				"name": "sitename"
+			},
+			{
+				"label": "login:",
+				"name": "login"
+			},
+			{
+				"label": "pass:",
+				"name": "pass"
+			}
+		]
+	} );
+
+	var table = new DataTable('#accounts', {
+		dom: 'Bfrtip',
+		ajax: 'php/table.accounts.php',
+		columns: [
+			{
+				"data": "acctype"
+			},
+			{
+				"data": "country"
+			},
+			{
+				"data": "infos"
+			},
+			{
+				"data": "price"
+			},
+			{
+				"data": "url"
+			},
+			{
+				"data": "sold"
+			},
+			{
+				"data": "sto"
+			},
+			{
+				"data": "dateofsold"
+			},
+			{
+				"data": "date"
+			},
+			{
+				"data": "resseller"
+			},
+			{
+				"data": "reported"
+			},
+			{
+				"data": "sitename"
+			},
+			{
+				"data": "login"
+			},
+			{
+				"data": "pass"
+			}
+		],
+		select: true,
+		lengthChange: false,
+		buttons: [
+			{ extend: 'create', editor: editor },
+			{ extend: 'edit',   editor: editor },
+			{ extend: 'remove', editor: editor }
+		]
+	} );
+} );
+
+}(jQuery));
+
+		</script>
 	</body>
 </html>
