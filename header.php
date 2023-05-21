@@ -250,9 +250,14 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-left" style="color: var(--font-color); background-color: var(--color-nav);" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="rdp" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-desktop fa-fw"></i> RDPs <span class="badge badge-primary">42</span></span></a>
-     
- 
-           
+                         </div>
+                </li>
+																
+                     </div>
+                </li>
+																
+                               </div>
+                </li>
     
 				
 				
