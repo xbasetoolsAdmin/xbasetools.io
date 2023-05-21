@@ -75,7 +75,7 @@
  
     }
  
-    .dataTables_wrapper .dataTables_paginate .paginate_button {
+    .datatables_wrapper .dataTables_paginate .paginate_button {
  
         color: var(--font-color);
  
