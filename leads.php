@@ -59,7 +59,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 
 $(document).ready(function() {
 	var editor = new DataTable.Editor( {
-		ajax: 'php/table.accounts.php',
+		ajax: 'divPage6.php',
 		table: '#accounts',
 		fields: [
 			{
