@@ -35,38 +35,19 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 </tr>
 </thead>
 <tbody>
- <?php
-include("cr.php");
-$q = mysqli_query($dbcon, "SELECT * FROM accounts WHERE sold='0' ORDER BY RAND()")or die(mysqli_error());
- while($row = mysqli_fetch_assoc($q)){
-	 
-	 	 $countryfullname = $row['country'];
-	  $code = array_search("$countryfullname", $countrycodes);
-	 $countrycode = strtolower($code);
-	    $qer = mysqli_query($dbcon, "SELECT * FROM resseller WHERE username='".$row['resseller']."'")or die(mysql_error());
-		   while($rpw = mysqli_fetch_assoc($qer))
-			 $SellerNick = "seller".$rpw["id"]."";
-     echo "
- <tr>     
-
-        <td id='country'><i class='flag-icon flag-icon-$countrycode'></i>&nbsp;".htmlspecialchars($row['country'])." </td>
-        <td id='country'><i class='flag-icon flag-icon-$countrycode'></i>&nbsp;".htmlspecialchars($row['country'])." </td>
-         <td id='sitename'> ".htmlspecialchars($row['sitename'])." </td> 
-        <td> ".htmlspecialchars($row['infos'])." </td>
-            <td id='seller'> ".htmlspecialchars($SellerNick)."</td>
-        <td id='country'><i class='flag-icon flag-icon-$countrycode'></i>&nbsp;".htmlspecialchars($row['country'])." </td>
-        <td id='country'><i class='flag-icon flag-icon-$countrycode'></i>&nbsp;".htmlspecialchars($row['country'])." </td>
-    <td> ".htmlspecialchars($row['price'])."</td>
-	    <td> ".$row['date']."</td>";
-    echo '
-    <td>
-	<span id="premium'.$row['id'].'" title="buy" type="premium"><a onclick="javascript:buythistool('.$row['id'].')" class="btn btn-primary btn-xs"><font color=white>Buy</font></a></span><center>
-    </td>
-            </tr>
-     ';
- }
-
- ?>
+<tr>
+<th data-priority="1"></th>
+<th class="all">ID</th>
+<th data-priority="4">Country</th>
+<th data-priority="3">Website Name</th>
+<th data-priority="7">Details</th>
+<th data-priority="8">Price</th>
+<th data-priority="9">Seller</th>
+<th data-priority="10">Source</th>
+<th class="all">Proof</th>
+<th data-priority="11">Date Created</th>
+<th class="all">Buy</th>
+</tr>
 </tbody>
 </table>
 </div>
