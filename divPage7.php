@@ -18,6 +18,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 </div>
 <div class="row m-2 pt-3 " style="max-width:100%; color: var(--font-color); background-color: var(--color-card);">
 <div class="col-sm-12 table-responsive">
+
 <table id="account_data" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);">
 <thead>
 <tr>
@@ -35,25 +36,22 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 
 
 <tbody>
-<tr>
-<td data-priority="1"> </td>
-<td class="all">id</td>
-<td data-priority="4">country</td>
-<td data-priority="3">sitename/td>
-<td data-priority="7">infos</td>
+<td> </td>
+<td>id</td>
+<td>country</td>
+<td>sitename/td>
+<td>infos</td>
 
-<td data-priority="8">
+<td>
 <span><a href=" " class="btn btn-primary btn-sm" style="font-size: 11px; cursor:pointer" target="_blank"><i class="fas fa-user mr-1"></i>Seller</a>
-
 </td>
 
 
-<td data-priority="9">price</td>
-<td data-priority="11">date</td>
+<td>price</td>
+<td>date</td>
 
 
-<td class="all">
-
+<td>
 <span id="premium" title="buy" type="premium"><a onclick="javascript:buythistool()" class="btn btn-primary btn-sm" style="font-size: 11px; cursor:pointer"><i class="fas fa-shopping-cart mr-1">
 </i>Buy</a>
 </span>
