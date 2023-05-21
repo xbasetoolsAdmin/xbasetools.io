@@ -68,7 +68,7 @@
     color: var(--font-color);
 
 }
-#account_data_paginate .paginate_button {
+#dataTable_paginate .paginate_button {
 color: var(--font-color);
 
 }
@@ -80,16 +80,16 @@ color: var(--font-color);
 
 }
 
-#account_data_filter{
+#dataTable_filter{
   color: var(--font-color);
 }
-#account_data_length{
+#dataTable_length{
   color: var(--font-color);
 }
-#account_data_paginate{
+#dataTable_paginate{
   color: var(--font-color);
 }
-#account_data_info{
+#dataTable_info{
   color: var(--font-color);
 }
 </style>
@@ -464,8 +464,8 @@ a.closearb {
 </div>
 </div>
 <div class="row m-2 pt-3 " style="max-width:100%; color: var(--font-color); background-color: var(--color-card);">
-<div class="col-sm-12 table-responsive">
-<table id="account_data" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);">
+<div class="col-sm-12 table-responsive" id="mainDiv">
+<table id="dataTable" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);">
 <thead>
 <tr>
 <th data-priority="1"></th>
