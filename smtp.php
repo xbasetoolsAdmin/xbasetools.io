@@ -630,7 +630,7 @@
                 $(btn).tooltip('hide'); /*console.log("hide-2");*/
             }, 1000);
         }
-    </script>
+    
         $(document).ready(function() {
         $('#datatables').DataTable({
                     "processing": true,
