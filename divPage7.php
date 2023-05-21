@@ -18,7 +18,9 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 </div>
 <div class="row m-2 pt-3 " style="max-width:100%; color: var(--font-color); background-color: var(--color-card);">
 <div class="col-sm-12 table-responsive">
-
+ <?php
+include("cr.php");
+$q = mysqli_query($dbcon, "SELECT * FROM accounts WHERE sold='0' ORDER BY RAND()")or die(mysqli_error());?>
 <table id="account_data" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);">
 <thead>
 <tr>
@@ -36,36 +38,45 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 
 
 <tbody>
-<td> </td>
+ <?php
+include("cr.php");
+$q = mysqli_query($dbcon, "SELECT * FROM accounts WHERE sold='0' ORDER BY RAND()")or die(mysqli_error());
+ 
 
-                            <tbody>
-                            <?php
-                              if(mysqli_num_rows($sold) > 0)
-                              {
-                                while($row = mysqli_fetch_assoc($sold))
-                                {
-                                  ?>
+ 
+while($row = mysqli_fetch_assoc($q)){
+	 
+$countryfullname = $row['country'];
+	  $code = array_search("$countryfullname", $countrycodes);
+	 $countrycode = strtolower($code);
+	    $qer = mysqli_query($dbcon, "SELECT * FROM resseller WHERE username='".$row['resseller']."'")or die(mysql_error());
+		   while($rpw = mysqli_fetch_assoc($qer))
+			 $SellerNick = "seller".$rpw["id"]."";
+     ?>
+
+                        
+                        
                                   <tr>
                                   <td>
-                                      <?php echo $row['id']; ?>
+
                                     </td>
                                     <td> 
-                                      <?php echo $row['country']; ?> 
+
                                     </td>
                                     <td>
-                                      <?php echo $row['sitename']; ?> 
+
                                     </td>
                                     <td>
-                                      <?php echo $row['infos']; ?> 
+
                                     </td>
                                     <td>
-                                      <?php echo $row['resseller']; ?> 
+
                                     </td>
                                     <td>
-                                      <?php echo $row['date']; ?> 
+
                                     </td>
                                     <td>
-                                      <?php echo $row['price']; ?> 
+                                      <?php echo  ".$row['date']." ?> 
                                     </td>
 
 
