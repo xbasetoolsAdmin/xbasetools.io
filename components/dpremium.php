@@ -40,10 +40,8 @@ $(window).on("popstate", (function (t) {
                                 , url: "divPage" + o + ".html"
                                 , success: function (e) {
                                         $("#mainDiv").html(e).show(), newTableObject = document.getElementById(
-                                                "table"), sorttable.makeSortable(newTableObject), $(
-                                                "table").floatThead({
-                                                top: 60
-                                        }), 0 == l && t()
+                                                "table"), 
+                                             0 == l && t()
                                 }
                         }), "function" == typeof stopCheckBTC && stopCheckBTC()
                 }(7, "Premium/Dating/Shopping - JeruxShop", "table.html", 1), new Clipboard(".copyit").on("success", (function (t) {
