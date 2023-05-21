@@ -143,7 +143,7 @@ ob_start(); session_start(); date_default_timezone_set('UTC'); include "includes
  
     }
  
-    #balance_data_paginate .paginate_button {
+    #leads_paginate .paginate_button {
         color: var(--font-color);
  
     }
@@ -155,25 +155,24 @@ ob_start(); session_start(); date_default_timezone_set('UTC'); include "includes
  
     }
  
-    #balance_data_filter {
+    #leads_filter {
         color: var(--font-color);
     }
  
-    #balance_data_length {
+    #leads_length {
         color: var(--font-color);
     }
  
-    #balance_data_paginate {
+    #leads_paginate {
         color: var(--font-color);
     }
  
-    #balance_data_info {
+    #leads_info {
         color: var(--font-color);
     }
 </style>
- 
 <body class="them">
-    <style>
+<style>
         .navbar-nav .dropdown-menu {
             margin: 0 !important
         }
@@ -432,7 +431,7 @@ ob_start(); session_start(); date_default_timezone_set('UTC'); include "includes
                 </li>
  
                 <li class="nav-item">
-                    <a class="nav-link" href="addBalance" style="color: var(--font-color);" role="button" aria-haspopup="true" aria-expanded="false"><span class="badge badge-danger">
+                    <a class="nav-link" href="addleads" style="color: var(--font-color);" role="button" aria-haspopup="true" aria-expanded="false"><span class="badge badge-danger">
                             0
                             <span class="px-2"><i class="fa fa-plus"></i></span></span>
                     </a>
@@ -457,7 +456,7 @@ ob_start(); session_start(); date_default_timezone_set('UTC'); include "includes
                         <a class="dropdown-item" href="setting" style="color: var(--font-color);"><span class="px-2">Setting <i class="fa fa-cog"></i></span></a>
                         <a class="dropdown-item" href="seller-profile" style="color: var(--font-color);"><span class="px-2">Profile <i class="fa fa-user"></i></span></a>
                         <a class="dropdown-item" href="orders" style="color: var(--font-color);"><span class="px-2">My Orders <i class="fa fa-shopping-cart"></i></span></a>
-                        <a class="dropdown-item" href="addBalance" style="color: var(--font-color);"><span class="px-2">Add Balance <i class="fa fa-money-bill-alt"></i></span></a>
+                        <a class="dropdown-item" href="addleads" style="color: var(--font-color);"><span class="px-2">Add leads <i class="fa fa-money-bill-alt"></i></span></a>
                         <a class="dropdown-item" href="logout" style="color: var(--font-color);"><span class="px-2">Logout <i class="fa fa-door-open"></i></span></a>
                     </div>
                 </li>
@@ -506,7 +505,10 @@ ob_start(); session_start(); date_default_timezone_set('UTC'); include "includes
     </div>
  
     <div style="padding-left:20px; display:inline-block; margin-bottom:10px">
-   <div id="mainDiv"></div>
+      <div class="row m-2 pt-3 " style="max-width:100%; color: var(--font-color); background-color: var(--color-card);">
+          <div class="col-sm-12 table-responsive" id="mainDiv">
+            <table id="leads" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);">
+       
     <script type="text/javascript">
         $(document).keydown(function(event) {
             if (event.which == "17")
