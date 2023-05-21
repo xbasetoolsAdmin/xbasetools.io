@@ -1,33 +1,30 @@
-
-<!DOCTYPE html>
-<html lang="">
-	<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html><html lang=""><head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>Xbasetools</title>
 		<!-- Bootstrap CSS -->
 	
-<link rel="stylesheet" href="layout/css/bootstrap.min.css">
-<script src=""https://code..jquery.com/jquery-3.5.1.min.js"></script>
-<script src="layout/js/clipboard.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<script src="layout/js/bootstrap.min.js"></script>
-<script src="layout/js/bootbox.min.js"></script>
+<link rel="stylesheet" href="layout/css/bootstrap.min.css" />
+<script src="" https:="" code..jquery.com="" jquery-3.5.1.min.js"="" />
+<script src="layout/js/clipboard.min.js" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" />
+<script src="layout/js/bootstrap.min.js" />
+<script src="layout/js/bootbox.min.js" />
 <link rel="stylesheet" type="text/css" href="layout/css/flags.css" />
 
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.dataTables.min.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css">
-<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.colVis.min.js"></script>
-<script src="js/jquery.dataTables.min.js"></script>
-<link href="//cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.dataTables.min.css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css" />
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js" />
+<script src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js" />
+<script src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js" />
+<script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.colVis.min.js" />
+<script src="js/jquery.dataTables.min.js" />
+<link href="//cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet" />
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js" />
 
-<script async src="//www.googletagmanager.com/gtag/js?id=UA-177092549-1"></script>
+<script async="" src="//www.googletagmanager.com/gtag/js?id=UA-177092549-1" />
 <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -39,8 +36,8 @@
 <link rel="stylesheet" href="layout/css/main.css?v=12.9" />
 <link rel="stylesheet" href="layout/css/util.css" />
 <style>body{padding-top:80px}</style>
-<link rel="stylesheet" href="layout/fonts/iconic/css/material-design-iconic-font.min.css">
-<script src="layout/js/main.js"></script>
+<link rel="stylesheet" href="layout/fonts/iconic/css/material-design-iconic-font.min.css" />
+<script src="layout/js/main.js" />
 <script type="text/javascript">
             // Notice how this gets configured before we load Font Awesome
             window.FontAwesomeConfig = { autoReplaceSvg: false }
@@ -52,10 +49,6 @@
             margin:0 !important
             }
         </style>
-</head>
-
-
-
 <style>
 
 .display  td {
@@ -92,7 +85,11 @@ color: var(--font-color);
 #dataTable_info{
   color: var(--font-color);
 }
-</style>
+</style></head>
+
+
+
+
 <body class="them">
 <style>
     .navbar-nav .dropdown-menu
@@ -269,40 +266,40 @@ input:checked + .slider:before {
                                                           padding-bottom: 0.5rem;
                                                           padding-left: 1rem;
                                                         ">
-<a class="navbar-brand" href="main" style="color: var(--font-color);"><img width="40px" src="layout/images/logo.png"> Odin</a>
+<a class="navbar-brand" href="main" style="color: var(--font-color);"><img width="40px" src="layout/images/logo.png" /> Odin</a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-<i class="navbar-toggler-icon"></i>
+<i class="navbar-toggler-icon" />
 </button>
 <div class="collapse navbar-collapse order-1" id="navbarSupportedContent">
 <ul class="navbar-nav mr-auto">
 
 <li class="nav-item dropdown mr-auto">
-<a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-warehouse fa-sm orange-text"></i>
+<a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-warehouse fa-sm orange-text" />
 Hosts
 </a>
 <div class="dropdown-menu dropdown-menu-left" style="color: var(--font-color); background-color: var(--color-nav);" aria-labelledby="navbarDropdown">
-<a class="dropdown-item" href="rdp" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-desktop fa-fw"></i> RDPs <span class="badge badge-primary">60</span></span></a>
-<a class="dropdown-item" href="cPanel" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-tools fa-fw"></i> cPanels <span class="badge badge-primary">16932</span></span></a>
-<a class="dropdown-item" href="shell" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-file-code fa-fw"></i> Shells <span class="badge badge-primary">1660</span></span></a>
+<a class="dropdown-item" href="rdp" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-desktop fa-fw" /> RDPs <span class="badge badge-primary">60</span></span></a>
+<a class="dropdown-item" href="cPanel" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-tools fa-fw" /> cPanels <span class="badge badge-primary">16932</span></span></a>
+<a class="dropdown-item" href="shell" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-file-code fa-fw" /> Shells <span class="badge badge-primary">1660</span></span></a>
 </div>
 </li>
 
 <li class="nav-item dropdown mr-auto">
-<a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fab fa-google-play fa-sm text-success"></i>
+<a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fab fa-google-play fa-sm text-success" />
 Send
 </a>
 <div class="dropdown-menu dropdown-menu-left" style="color: var(--font-color); background-color: var(--color-nav);" aria-labelledby="navbarDropdown">
-<a class="dropdown-item" href="mailer" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-leaf fa-fw"></i> Mailers <span class="badge badge-primary">379</span></span></a>
-<a class="dropdown-item" href="smtp" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-envelope fa-fw"></i> SMTPs <span class="badge badge-primary">2518</span></span></a>
+<a class="dropdown-item" href="mailer" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-leaf fa-fw" /> Mailers <span class="badge badge-primary">379</span></span></a>
+<a class="dropdown-item" href="smtp" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-envelope fa-fw" /> SMTPs <span class="badge badge-primary">2518</span></span></a>
 </div>
 </li>
 
 
 
 <li class="nav-item dropdown mr-auto">
-<a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-leaf fa-fw fa-sm text-success" style="margin-right: 4px;"></i>Leads</a>
+<a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-leaf fa-fw fa-sm text-success" style="margin-right: 4px;" />Leads</a>
 <div class="dropdown-menu dropdown-menu-left" style="color: var(--font-color); background-color: var(--color-nav);" aria-labelledby="navbarDropdown">
-<a class="dropdown-item" href="lead" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-leaf fa-fw"></i> Premium Shells <span class="badge badge-primary">1041</span></span></a>
+<a class="dropdown-item" href="lead" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-leaf fa-fw" /> Premium Shells <span class="badge badge-primary">1041</span></span></a>
 </div>
 </li>
 
@@ -310,56 +307,56 @@ Send
 
 
 <li class="nav-item dropdown mr-auto">
-<a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-mail-bulk fa-sm pink-color"></i> Leads
+<a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-mail-bulk fa-sm pink-color" /> Leads
 </a>
 <div class="dropdown-menu dropdown-menu-left" style="color: var(--font-color); background-color: var(--color-nav);" aria-labelledby="navbarDropdown">
-<a class="dropdown-item" href="banks" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-award"></i> 100% Validated Leads <span class="badge badge-primary">0</span></span></a>
-<a class="dropdown-item" href="banks-1" style="color: var(--font-color);"><span class="px-2"><i class="fa fa-fire orange-color"></i> Email Only <span class="badge badge-primary">163</span></span></a>
-<a class="dropdown-item" href="banks-2" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-passport"></i> Combo Email:Password <span class="badge badge-primary">23</span></span></a>
-<a class="dropdown-item" href="banks-3" style="color: var(--font-color);"><span class="px-2"><i class="fab fa-battle-net"></i> Combo Username:Password <span class="badge badge-primary">1</span></span></a>
-<a class="dropdown-item" href="banks-4" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-at"></i> Email Access <span class="badge badge-primary">22</span></span></a>
-<a class="dropdown-item" href="banks-6" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-mobile-alt"></i> Phone Number Only <span class="badge badge-primary">31</span></span></a>
-<a class="dropdown-item" href="banks-7" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-phone-square"></i> Combo Phone:Password <span class="badge badge-primary">3</span></span></a>
-<a class="dropdown-item" href="banks-8" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-inbox"></i> Full Data <span class="badge badge-primary">0</span></span></a>
-<a class="dropdown-item" href="banks-9" style="color: var(--font-color);"><span class="px-2"><i class="fab fa-facebook"></i> Social Media Data <span class="badge badge-primary">0</span></span></a>
+<a class="dropdown-item" href="banks" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-award" /> 100% Validated Leads <span class="badge badge-primary">0</span></span></a>
+<a class="dropdown-item" href="banks-1" style="color: var(--font-color);"><span class="px-2"><i class="fa fa-fire orange-color" /> Email Only <span class="badge badge-primary">163</span></span></a>
+<a class="dropdown-item" href="banks-2" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-passport" /> Combo Email:Password <span class="badge badge-primary">23</span></span></a>
+<a class="dropdown-item" href="banks-3" style="color: var(--font-color);"><span class="px-2"><i class="fab fa-battle-net" /> Combo Username:Password <span class="badge badge-primary">1</span></span></a>
+<a class="dropdown-item" href="banks-4" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-at" /> Email Access <span class="badge badge-primary">22</span></span></a>
+<a class="dropdown-item" href="banks-6" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-mobile-alt" /> Phone Number Only <span class="badge badge-primary">31</span></span></a>
+<a class="dropdown-item" href="banks-7" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-phone-square" /> Combo Phone:Password <span class="badge badge-primary">3</span></span></a>
+<a class="dropdown-item" href="banks-8" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-inbox" /> Full Data <span class="badge badge-primary">0</span></span></a>
+<a class="dropdown-item" href="banks-9" style="color: var(--font-color);"><span class="px-2"><i class="fab fa-facebook" /> Social Media Data <span class="badge badge-primary">0</span></span></a>
 </div>
 </li>
 
 
 <li class="nav-item dropdown mr-auto">
-<a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-tie fa-sm"></i> Datings
+<a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-tie fa-sm" /> Datings
 </a>
 <div class="dropdown-menu dropdown-menu-left" style="color: var(--font-color); background-color: var(--color-nav);" aria-labelledby="navbarDropdown">
-<a class="dropdown-item" href="premium" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-business-time"></i> cPanel Webmail <span class="badge badge-primary">6978</span></span></a>
+<a class="dropdown-item" href="premium" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-business-time" /> cPanel Webmail <span class="badge badge-primary">6978</span></span></a>
 </div>
 </li>
 
 
 <li class="nav-item dropdown mr-auto">
-<a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-friends fa-sm"></i> Tutorial/Methods
+<a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-friends fa-sm" /> Tutorial/Methods
 </a>
 <div class="dropdown-menu dropdown-menu-left" style="color: var(--font-color); background-color: var(--color-nav);" aria-labelledby="navbarDropdown">
-<a class="dropdown-item" href="tutorial-1" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-comments-dollar"></i> Marketing <span class="badge badge-primary">97</span></span></a>
+<a class="dropdown-item" href="tutorial-1" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-comments-dollar" /> Marketing <span class="badge badge-primary">97</span></span></a>
 </div>
 </li>
 
 <li class="nav-item dropdown">
-<a class="nav-link dropdown-toggle" role="button" style="color: var(--font-color);" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fab fa-drupal text-primary fa-sm"></i> Requests
+<a class="nav-link dropdown-toggle" role="button" style="color: var(--font-color);" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fab fa-drupal text-primary fa-sm" /> Requests
 </a>
 <div class="dropdown-menu dropdown-menu-left" style="color: var(--font-color); background-color: var(--color-nav);" aria-labelledby="navbarDropdown">
-<a class="dropdown-item" href="requests" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-user-plus"></i> Buyers Requests <span class="badge badge-primary"> 85</span></span></a>
+<a class="dropdown-item" href="requests" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-user-plus" /> Buyers Requests <span class="badge badge-primary"> 85</span></span></a>
 </div>
 </li>
 
 <li class="nav-item dropdown">
-<a class="nav-link" href="offers" style="color: var(--font-color);"><i class="fas fa-user-secret text-primary fa-sm"></i> Bulk Offers</a>
+<a class="nav-link" href="offers" style="color: var(--font-color);"><i class="fas fa-user-secret text-primary fa-sm" /> Bulk Offers</a>
 </li>
 </ul>
 
 <ul class="navbar-nav profile">
 
 <li class="nav-item dropdown">
-<a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bell text-danger"></i> <span class="badge badge-success">0</span></a>
+<a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bell text-danger" /> <span class="badge badge-success">0</span></a>
 <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="color: var(--font-color); background-color: var(--color-nav);">
 <a class="dropdown-item" href="#" style="color: var(--font-color);">There is no new notifications</a> </div>
 </li>
@@ -367,13 +364,13 @@ Send
 <li class="nav-item">
 <a class="nav-link" href="addBalance" style="color: var(--font-color);" role="button" aria-haspopup="true" aria-expanded="false"><span class="badge badge-danger">
 0
-<span class="px-2"><i class="fa fa-plus"></i></span></span>
+<span class="px-2"><i class="fa fa-plus" /></span></span>
 </a>
 </li>
 
 <li class="nav-item dropdown">
 <a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Ticket <span class="badge badge-success">0</span></a>
-</a>
+
 <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="color: var(--font-color); background-color: var(--color-nav);">
 <a class="dropdown-item" href="orders" style="color: var(--font-color);"><span class="px-2">Report Items</span></a>
 <a class="dropdown-item" href="tickets" style="color: var(--font-color);"><span class="px-2">My Tickets <span class="badge badge-success">0</span></span></a>
@@ -384,14 +381,14 @@ Send
 
 
 <li class="nav-item dropdown">
-<a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> hustlersfather <i class="fa fa-user-secret" style="color: var(--font-color);"></i></a>
-</a>
+<a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> hustlersfather <i class="fa fa-user-secret" style="color: var(--font-color);" /></a>
+
 <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="color: var(--font-color); background-color: var(--color-nav);">
-<a class="dropdown-item" href="setting" style="color: var(--font-color);"><span class="px-2">Setting <i class="fa fa-cog"></i></span></a>
-<a class="dropdown-item" href="seller-profile" style="color: var(--font-color);"><span class="px-2">Profile <i class="fa fa-user"></i></span></a>
-<a class="dropdown-item" href="orders" style="color: var(--font-color);"><span class="px-2">My Orders <i class="fa fa-shopping-cart"></i></span></a>
-<a class="dropdown-item" href="addBalance" style="color: var(--font-color);"><span class="px-2">Add Balance <i class="fa fa-money-bill-alt"></i></span></a>
-<a class="dropdown-item" href="logout" style="color: var(--font-color);"><span class="px-2">Logout <i class="fa fa-door-open"></i></span></a>
+<a class="dropdown-item" href="setting" style="color: var(--font-color);"><span class="px-2">Setting <i class="fa fa-cog" /></span></a>
+<a class="dropdown-item" href="seller-profile" style="color: var(--font-color);"><span class="px-2">Profile <i class="fa fa-user" /></span></a>
+<a class="dropdown-item" href="orders" style="color: var(--font-color);"><span class="px-2">My Orders <i class="fa fa-shopping-cart" /></span></a>
+<a class="dropdown-item" href="addBalance" style="color: var(--font-color);"><span class="px-2">Add Balance <i class="fa fa-money-bill-alt" /></span></a>
+<a class="dropdown-item" href="logout" style="color: var(--font-color);"><span class="px-2">Logout <i class="fa fa-door-open" /></span></a>
 </div>
 </li>
 
@@ -426,7 +423,7 @@ a.closearb {
 </style> <div class="d-flex flex-row-reverse mt-0">
 <div class="p-2">
 <label id="switch" class="switch">
-<input type="checkbox" onchange="toggleTheme()" id="slider">
+<input type="checkbox" onchange="toggleTheme()" id="slider" />
 <span class="slider round">
 </span>
 </label>
@@ -438,7 +435,7 @@ a.closearb {
 <li>There is <b> 0 </b> Accounts Available.</li>
 </ul>
 </div>
-<input type=hidden id="cat" name="cat" value="11" />
+<input type="hidden" id="cat" name="cat" value="11" />
 <div class="row m-3 pt-1" style="color: var(--font-color);">
 <div class="col-xs-6 col-sm-4 col-lg-2" style="display:inline-block">
 <label for="infos" style="margin-bottom: 10px; margin-top: 5px">Website Name :</label>
@@ -448,7 +445,7 @@ a.closearb {
 </div>
 <div class="col-xs-6 col-sm-4 col-lg-2" style="display:inline-block">
 <label for="infos" style="margin-bottom: 10px; margin-top: 5px">Details:</label>
-<input type="search" class="form-control" id="infos" style="color: var(--font-color); background-color: var(--color-card);">
+<input type="search" class="form-control" id="infos" style="color: var(--font-color); background-color: var(--color-card);" />
 </div>
 <div class="col-xs-6 col-sm-4 col-lg-2" style="display:inline-block">
 <label for="Country" style="margin-bottom: 10px; margin-top: 5px">Country :</label>
@@ -468,7 +465,7 @@ a.closearb {
 <table id="dataTable" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);">
 <thead>
 <tr>
-<th data-priority="1"></th>
+<th data-priority="1" />
 <th class="all">ID</th>
 <th data-priority="4">Country</th>
 <th data-priority="3">Website Name</th>
@@ -488,9 +485,9 @@ a.closearb {
 <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-notify modal-success" role="document">
 <div class="modal-content">
 <div class="modal-header">
-<p class="heading" id="myModalHeader"></p>
+<p class="heading" id="myModalHeader" />
 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-<span aria-hidden="true" class="white-text">&times;</span>
+<span aria-hidden="true" class="white-text">×</span>
 </button>
 </div>
 <div class="modal-body" id="modelbody">
@@ -512,11 +509,11 @@ a.closearb {
 </div>
 
 <div class="modal-body">
-<i class='fas fa-shopping-cart fa-4x animated rotateIn'></i>
+<i class="fas fa-shopping-cart fa-4x animated rotateIn" />
 </div>
 
 <div class="modal-footer flex-center">
-<a onClick='confirmbye()' class="btn btn-outline-info waves-effect" data-dismiss="modal">Yes</a>
+<a onclick="confirmbye()" class="btn btn-outline-info waves-effect" data-dismiss="modal">Yes</a>
 <a type="button" class="btn btn-info" data-dismiss="modal">No</a>
 </div>
 </div>
@@ -532,10 +529,10 @@ a.closearb {
 
 <div class="modal-body">
 <div class="row d-flex justify-content-center align-items-center">
-<img src="layout/images/balance.png">
+<img src="layout/images/balance.png" />
 <span class="pt-3 mx-4" style="font-size: 14 px"><b>No enough balance !</b> Please refill your balance</span>
 <a type="button" href="addBalance" onclick="window.open(this.href);return false;" class="btn btn-danger">Add Balance
-<i class="fas fa-book ml-1 white-text"></i>
+<i class="fas fa-book ml-1 white-text" />
 </a>
 <a type="button" class="btn btn-outline-danger waves-effect" data-dismiss="modal">No, thanks</a>
 </div>
@@ -680,5 +677,6 @@ a.closearb {
         }
 
         </script>
-</body>
-</html>
+
+
+</body></html>
