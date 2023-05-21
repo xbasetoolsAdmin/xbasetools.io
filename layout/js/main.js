@@ -2,7 +2,7 @@ $(function(){'use strict';$('.navbar-nav li.dropdown').hover(function(){$(this).
 var obj={Title:t,Url:u};if(("/"+obj.Url)!=location.pathname){if(x!=1){history.pushState(obj,obj.Title,obj.Url);}
 else{history.replaceState(obj,obj.Title,obj.Url);}}
 document.title=obj.Title;$("#disPlay").html('<div id="mydiv"><img src="files/img/load.gif" class="ajax-loader"></div>').show();$.ajax({type:'GET',url:'divPage'+n+'.html',success:function(data)
-{$("#dislay").html(data).show();}});if(typeof stopCheckBTC==='function'){var a=stopCheckBTC();}}
+{$("#disPlay").html(data).show();}});if(typeof stopCheckBTC==='function'){var a=stopCheckBTC();}}
 function openitem(order){$("#myModalLabel").text('Order #'+order);$('#myModal').modal('show');$.ajax({type:'GET',url:'showOrder'+order,success:function(data){$("#modelbody").html(data).show();}});}
 function sendt(id){var sub=$("#subject"+id).val();var msg=$("#msg"+id).val();var pr=$("#proi"+id).val();$.ajax({method:"GET",url:"CreateReport?id="+id+"&m="+btoa(msg),dataType:"text",success:function(data){$("#resulta"+id).html(data).show();},});}
 function sendReview(id){var rating=$("#rating-"+id+" input[type='radio']:checked").val();var review=$("#review-"+id).val();if(rating==undefined)
