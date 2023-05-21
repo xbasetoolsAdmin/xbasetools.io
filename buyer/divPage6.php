@@ -13,7 +13,15 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 
 
 
-<script type="text/javascript">
+
+<script>
+$(document).ready(function() {
+$("#lead_data").DataTable( {
+"lengthMenu": [[10, 25, 100, 500, -1], [10, 25, 100, 500, "All"]],
+				'iDisplayLength': 1000,
+				"aaSorting": []
+			} );
+		} );
              function ajaxinfo() {
                 $.ajax({
                     type: 'GET',
@@ -71,8 +79,8 @@ function pageDiv(n,t,u,x){
     {
         $("#mainDiv").html(data).show();
         newTableObject = document.getElementById('table');
-        sorttable.makeSortable(newTableObject);
-        $(".sticky-header").floatThead({top:60});
+        //sorttable.makeSortable(newTableObject);
+      //  $(".sticky-header").floatThead({top:60});
         if(x==0){ajaxinfo();}
       }});
     if (typeof stopCheckBTC === 'function') { 
