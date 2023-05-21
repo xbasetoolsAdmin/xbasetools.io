@@ -259,7 +259,9 @@
                                </div>
                 </li>
     
-				<ul>
+		      		<ul>
+					
+		        <div class="collapse navbar-collapse order-2" id="navbarSupportedContent">
 				
 				
 				
