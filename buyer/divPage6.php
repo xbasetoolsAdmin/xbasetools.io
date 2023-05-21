@@ -87,15 +87,15 @@ $(window).on('load', function () {
 });
 
 function setTooltip(btn, message) {
-        //console.log("hide-1");
+        console.log("hide-1");
         $(btn).tooltip('hide')
                 .attr('data-original-title', message)
                 .tooltip('show');
-        //console.log("show");
+        console.log("show");
 }
 
 function hideTooltip(btn) {
         setTimeout(function () { $(btn).tooltip('hide');
-                //console.log("hide-2"); }, 1000);
+                console.log("hide-2"); }, 1000);
 }
 </script>
