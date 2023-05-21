@@ -140,37 +140,14 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 </div>
 
 <script>
-$(document).ready( function() {
-  $('#account_data').dataTable( {
-    "fnRowCallback": function( nRow, aData, iDisplayIndex, iDisplayIndexFull ) {
-      // Bold the grade for all 'A' grade browsers
-      if ( aData[4] == "A" )
-      {
-        $('td:eq(4)', nRow).html( '<b>A</b>' );
-      }
-    }
-  } );
-} );
-</script>
-<script>
-                          "columns": [
-                                { "data": 0 },
-                                { "data": 1 },
-                                { "data": 2 },
-                                { "data": 3 },
-                                { "data": 4 },
-                                { "data": 5 },
-                                { "data": 6 },
-                                { "data": 7 },
-                                { "data": 8 },
-                                { "data": 9 },
-                                { "data": 10}
-                                ],
-
-                        "pageLength": 500
-                    });
-                }
-
+		<script>
+		$(document).ready(function() {
+			$('#example').DataTable( {
+				"lengthMenu": [[10, 25, 100, 500, -1], [10, 25, 100, 500, "All"]],
+				'iDisplayLength': 1000,
+				"aaSorting": []
+			} );
+		} );
                $(document).on('change', '.form-control', function(){
 
                     $('#account_data').DataTable().destroy();
