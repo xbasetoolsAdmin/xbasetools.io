@@ -7,7 +7,7 @@
 .dataTables_wrapper .dataTables_paginate .paginate_button {
     color: var(--font-color);
 }
-#account_data_paginate .paginate_button {
+#lead_data_paginate .paginate_button {
 color: var(--font-color);
 }
 .alert-info {
@@ -15,16 +15,16 @@ color: var(--font-color);
     background-color: var(--color-backinfo);
     border-color: var(--color-borderinfo);
 }
-#account_data_filter{
+#lead_data_filter{
   color: var(--font-color);
 }
-#account_data_length{
+#lead_data_length{
   color: var(--font-color);
 }
-#account_data_paginate{
+#lead_data_paginate{
   color: var(--font-color);
 }
-#account_data_info{
+#lead_data_info{
   color: var(--font-color);
 }
 </style>
@@ -218,24 +218,33 @@ include "mainDiv.php";
 ?>
 <div class="row m-2 pt-3 " style="max-width:100%; color: var(--font-color); background-color: var(--color-card);">
 <div class="col-sm-12 table-responsive" id="mainDiv">
-<table id="account_data" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);">
+<table id="lead_data" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);">
 <thead>
     <tr>
       <th scope="col" > </th>
-      <th scope="col">ID</th>
-      <th scope="col">Website</th>
-  <!---<th scope="col">Site Name</th>- -->
-      <th scope="col">Details</th>
+      <th sco
+</div>
+<div class="row m-2 pt-3 " style="max-width:100%; color: var(--font-color); background-color: var(--color-card);">
+<div class="col-sm-12 table-responsive">
+<table id="lead_data" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);">
+<thead>
+<thead>
+    <tr>
+      <th scope="col" ></th>
+      <th scope="col" >Country</th>
+      <th scope="col">Description</th>
+      <th scope="col">Email N</th>
       <th scope="col">Seller</th>
       <th scope="col">Price</th>
-      <th scope="col">Created  Date </th>
+      <th scope="col">Added on </th>
       <th scope="col">Buy</th>
     </tr>
 </thead>
+  <tbody>
 </table>
 <script>
 $(document).ready(function() {
-$("#account_data").DataTable( {
+$("#lead_data").DataTable( {
 "lengthMenu": [[10, 25, 100, 500, -1], [10, 25, 100, 500, "All"]],
 				'iDisplayLength': 1000,
 				"aaSorting": []
