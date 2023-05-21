@@ -20,6 +20,8 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 <thead>
 <thead>
     <tr>
+              <th scope="col" ></th>
+     <th scope="col" >Country</th>
       <th scope="col" >Country</th>
       <th scope="col">Description</th>
       <th scope="col">Email N</th>
@@ -45,7 +47,9 @@ $q = mysqli_query($dbcon, "SELECT * FROM leads WHERE sold='0' ORDER BY RAND()")o
 		   while($rpw = mysqli_fetch_assoc($qer))
 			 $SellerNick = "seller".$rpw["id"]."";
      echo "
- <tr>     
+ <tr>    
+ <td></td>
+	    <td> ".$row['id']."</td>
     <td id='leads_country'><i class='flag-icon flag-icon-$countrycode'></i>&nbsp;".htmlspecialchars($row['country'])." </td>
     <td id='leads_about'> ".htmlspecialchars($row['infos'])." </td> 
 	<td> ".htmlspecialchars($row['number'])." </td>
