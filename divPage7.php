@@ -37,27 +37,36 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 
 <tbody>
 <td> </td>
-<td>id</td>
-<td>country</td>
-<td>sitename</td>
-<td>infos</td>
 
-<td>
-['resseller']
-</td>
-
-
-<td>price</td>
-<td>date</td>
-
-
-<td>
-
-</i>Buy</a>
-</span>
-
-</td>
-
+                            <tbody>
+                            <?php
+                              if(mysqli_num_rows($sold) > 0)
+                              {
+                                while($row = mysqli_fetch_assoc($sold))
+                                {
+                                  ?>
+                                  <tr>
+                                  <td>
+                                      <?php echo $row['id']; ?>
+                                    </td>
+                                    <td> 
+                                      <?php echo $row['country']; ?> 
+                                    </td>
+                                    <td>
+                                      <?php echo $row['sitename']; ?> 
+                                    </td>
+                                    <td>
+                                      <?php echo $row['infos']; ?> 
+                                    </td>
+                                    <td>
+                                      <?php echo $row['resseller']; ?> 
+                                    </td>
+                                    <td>
+                                      <?php echo $row['date']; ?> 
+                                    </td>
+                                    <td>
+                                      <?php echo $row['price']; ?> 
+                                    </td>
 
 
 </tr>
