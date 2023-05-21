@@ -56,7 +56,7 @@ function pageDiv(n, t, u, x) {
                 if (x != 1) { history.pushState(obj, obj.Title, obj.Url); } else { history.replaceState(obj, obj.Title, obj.Url); }
         }
         document.title = obj.Title;
-        $("#mainDiv").html('<div id="mydiv"><img src="files/img/load2.gif" class="ajax-loader"></div>').show();
+        $("#mainDiv").html('<div id="mydiv"><img src="../divPage6.html" class="ajax-loader"></div>').show();
         $.ajax({
                 type: 'GET'
                 , url: 'divPage' + n + '.html'
