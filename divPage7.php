@@ -43,7 +43,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 <td>infos</td>
 
 <td>
-<span><a href=" " class="btn btn-primary btn-sm" style="font-size: 11px; cursor:pointer" target="_blank"><i class="fas fa-user mr-1"></i>Seller</a>
+['resseller']
 </td>
 
 
@@ -52,7 +52,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 
 
 <td>
-<span id="premium" title="buy" type="premium"><a onclick="javascript:buythistool()" class="btn btn-primary btn-sm" style="font-size: 11px; cursor:pointer"><i class="fas fa-shopping-cart mr-1">
+
 </i>Buy</a>
 </span>
 
