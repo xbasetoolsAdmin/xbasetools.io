@@ -142,7 +142,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 <script>
 		<script>
 		$(document).ready(function() {
-			$('#example').DataTable( {
+			$('#account_data').DataTable( {
 				"lengthMenu": [[10, 25, 100, 500, -1], [10, 25, 100, 500, "All"]],
 				'iDisplayLength': 1000,
 				"aaSorting": []
