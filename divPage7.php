@@ -28,8 +28,6 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 <th data-priority="7">Details</th>
 <th data-priority="8">Price</th>
 <th data-priority="9">Seller</th>
-<th data-priority="10">Source</th>
-<th class="all">Proof</th>
 <th data-priority="11">Date Created</th>
 <th class="all">Buy</th>
 </tr>
@@ -75,8 +73,6 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 <th data-priority="7">Details</th>
 <th data-priority="8">Price</th>
 <th data-priority="9">Seller</th>
-<th data-priority="10">Source</th>
-<th class="all">Proof</th>
 <th data-priority="11">Date Created</th>
 <th class="all">Buy</th>
 </tr>
