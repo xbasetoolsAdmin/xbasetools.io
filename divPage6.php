@@ -11,7 +11,13 @@ if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
 $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 ?>
 
-<table width="100%"  class="table table-striped table-bordered table-condensed sticky-header" id="table">
+
+
+</div>
+<div class="row m-2 pt-3 " style="max-width:100%; color: var(--font-color); background-color: var(--color-card);">
+<div class="col-sm-12 table-responsive">
+<table id="lead_data" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);">
+<thead>
 <thead>
     <tr>
       <th scope="col" >Country</th>
