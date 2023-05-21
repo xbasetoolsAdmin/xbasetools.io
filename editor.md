@@ -1,5 +1,13 @@
 
-<title>Accounts</title>
+<!DOCTYPE html>
+<html lang="">
+	<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>XbaeTools</title>
+		<!-- Bootstrap CSS -->
+	
 <link rel="stylesheet" href="layout/css/bootstrap.min.css">
 <script src=""https://code..jquery.com/jquery-3.5.1.min.js"></script>
 <script src="layout/js/clipboard.min.js"></script>
