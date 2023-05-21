@@ -261,7 +261,7 @@ $("#account_data").DataTable( {
 <?php
 
 
-include "components/dpremium.php";
+include "buyer/divPage6.php";
 
 ?>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="true">
