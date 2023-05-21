@@ -58,7 +58,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 
                                     </td>
                                     <td>
-                                      <?php echo  ".$row['date']." ?> 
+
                                     </td>
 
 
