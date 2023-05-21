@@ -35,19 +35,35 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 </tr>
 </thead>
 
+
 <tbody>
 <tr>
-<th data-priority="1"></th>
-<th class="all">ID</th>
-<th data-priority="4">Country</th>
-<th data-priority="3">Website Name</th>
-<th data-priority="7">Details</th>
-<th data-priority="8">Price</th>
-<th data-priority="9">Seller</th>
-<th data-priority="10">Source</th>
-<th class="all">Proof</th>
-<th data-priority="11">Date Created</th>
-<th class="all">Buy</th>
+<td data-priority="1"> </td>
+<td class="all">id</td>
+<td data-priority="4">country</td>
+<td data-priority="3">sitename/td>
+<td data-priority="7">infos</td>
+
+<td data-priority="8">
+<span><a href=" " class="btn btn-primary btn-sm" style="font-size: 11px; cursor:pointer" target="_blank"><i class="fas fa-user mr-1"></i>Seller</a>
+
+</td>
+
+
+<td data-priority="9">price</td>
+<td data-priority="11">date</td>
+
+
+<td class="all">
+
+<span id="premium" title="buy" type="premium"><a onclick="javascript:buythistool()" class="btn btn-primary btn-sm" style="font-size: 11px; cursor:pointer"><i class="fas fa-shopping-cart mr-1">
+</i>Buy</a>
+</span>
+
+</td>
+
+
+
 </tr>
 </tbody>
 <tfoot>
