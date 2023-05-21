@@ -54,7 +54,7 @@
             }
         </style>
 	<style>
- 
+ </head>
 <body class="them">
     <style>
         .navbar-nav .dropdown-menu {
@@ -192,6 +192,9 @@
         .slider.round:before {
             border-radius: 50%;
         }
+								</style>
+								
+								<script>
         function setTheme(themeName) {
             localStorage.setItem('theme', themeName);
             document.documentElement.className = themeName;
@@ -217,7 +220,7 @@
             }
         })();
     </script>
-</head>
+
 <nav class="navbar navbar-expand-xl navbar  navbar-light " style="
                                                           position:fixed;
                                                           background-color: var(--color-nav);
@@ -262,7 +265,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="addBalance" style="color: var(--font-color);" role="button" aria-haspopup="true" aria-expanded="false"><span class="badge badge-danger">
                             0
-                            <span class="px-2"><i class="fa fa-plus"></i></span></span>
+                       <span class="px-2"><i class="fa fa-plus"></i></span></span>
                     </a>
                 </li>
  
