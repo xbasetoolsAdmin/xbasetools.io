@@ -81,7 +81,7 @@
  
     }
  
-    #account_data_paginate .paginate_button {
+    #datatables_paginate .paginate_button {
         color: var(--font-color);
  
     }
@@ -93,19 +93,19 @@
  
     }
  
-    #account_data_filter {
+    #datatables_filter {
         color: var(--font-color);
     }
  
-    #account_data_length {
+    #datatables_length {
         color: var(--font-color);
     }
  
-    #account_data_paginate {
+    #datatables_paginate {
         color: var(--font-color);
     }
  
-    #account_data_info {
+    #datatables_info {
         color: var(--font-color);
     }
 </style>
@@ -304,6 +304,7 @@
             }
         })();
     </script>
+    
     <nav class="navbar navbar-expand-xl navbar  navbar-light " style="
                                                           position:fixed;
                                                           background-color: var(--color-nav);
