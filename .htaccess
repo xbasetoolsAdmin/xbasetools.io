@@ -43,7 +43,7 @@ RewriteRule ^CreateReport$  treport.php
 RewriteRule ^addBalance$  funds.php
 RewriteRule ^addBalanceAction$  addBalanceAction.php
 RewriteRule ^rdp$  rdp.php
-RewriteRule ^tutorial$  tutorial.php
+RewriteRule ^tutorials$  tutorial.php
 RewriteRule ^MakePayment$  pay.php
 RewriteRule ^BitcoinPayment$  btc3.php
 RewriteRule ^banks$  banks.php
