@@ -1,7 +1,6 @@
 <?php
 ob_start();
 session_start();
-error_reporting();
 date_default_timezone_set('UTC');
 include "../includes/config.php";
 
@@ -10,50 +9,93 @@ if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
     exit();
 }
 $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
-
 ?>
-<?php
- echo'
-<div class="form-group col-lg-7 ">
-<div class="well">
-  Hello <a class="label label-primary">'.$usrid.'</a><br>
-    If you have any <b>Question</b> ,<b>Problem</b>, <b>Suggestion</b> or <b>Request</b> Please feel free to <a class="label label-default " href="tickets.html"><span class="glyphicon glyphicon-pencil"></span> Open a Ticket</a><br>
-    if you want to report an order , just go to <abbr title="Account - > My Orders or Click here" >My Orders  <span class="glyphicon glyphicon-shopping-cart"></span></abbr> 
-    then click on <a class="label label-primary">Report #[Order Id]</a> button<br><br>
-    Our Domains are <b>Jerux.to</b> || <b>Jerux.xyz</b> || <b>Jerux.shop</b> || <b>Jerux.pw</b> - Please Save them!
 
-</div>
 
-    <div class="list-group" id="div2">
-      	<h3><i class="glyphicon glyphicon-info-sign"></i> News</h3>'; 
-		 $qq = @mysqli_query($dbcon, "SELECT * FROM news ORDER by id desc LIMIT 5") or die("error here"); 
 
-                
-while($r = mysqli_fetch_assoc($qq)){				echo'<a class="list-group-item"><h5 class="list-group-item-heading"><b>'.stripcslashes($r['content']).'</b></h5><h6 class="list-group-item-text">'.$r['date'].'</h6></a>'; 
+
+<script>
+
+  function ajaxinfo() {
+        $.ajax({
+                type: 'GET'
+                , url: 'ajaxinfo.html'
+                , timeout: 10000
+                , success: function (data) {
+                        if (data != '01') {
+                                var data = JSON.parse(data);
+                                for (var prop in data) {
+                                        $("#" + prop).html(data[prop]).show();
+                                }
+                        } else {
+                                window.location = "logout.html";
+                        }
+                }
+        });
 }
- echo '
+setInterval(function () {
+        ajaxinfo()
+}, 3000);
+ajaxinfo();
+$(document).keydown(function (event) {
+        if (event.which == "17")
+                cntrlIsPressed = true;
+});
+$(document).keyup(function () {
+        cntrlIsPressed = false;
+});
+var cntrlIsPressed = false;
 
-				 </div>
+function pageDiv(n, t, u, x) {
+        if (cntrlIsPressed) {
+                window.open(u, '_blank');
+                return false;
+        }
+        var obj = { Title: t, Url: u };
+        if (("/" + obj.Url) != location.pathname) {
+                if (x != 1) { history.pushState(obj, obj.Title, obj.Url); } else { history.replaceState(obj, obj.Title, obj.Url); }
+        }
+        document.title = obj.Title;
+        $("#mainDiv").html('<div id="mydiv"><img src="../divPage6.html" class="ajax-loader"></div>').show();
+        $.ajax({
+                type: 'GET'
+                , url: 'divPage' + n + '.html'
+                , success: function (data) {
+                        $("#mainDiv").html(data).show();
+                        newTableObject = document.getElementById('table');
+                        //sorttable.makeSortable(newTableObject);
+                        //  $(".sticky-header").floatThead({top:60});
+                        if (x == 0) { ajaxinfo(); }
+                }
+        });
+        if (typeof stopCheckBTC === 'function') {
+                var a = stopCheckBTC();
+        }
+}
+$(window).on("popstate", function (e) {
+        location.replace(document.location);
+});
+$(window).on('load', function () {
+        $('.dropdown').hover(function () { $('.dropdown-toggle', this).trigger('click'); });
+        pageDiv(0, 'XBaseTools', '', 1);
+        var clipboard = new Clipboard('.copyit');
+        clipboard.on('success', function (e) {
+                setTooltip(e.trigger, 'Copied!');
+                hideTooltip(e.trigger);
+                e.clearSelection();
+        });
+});
 
-</div>
-<div class="form-group col-lg-4 ">
-	<!-- <img src="files/img/eid.jpg" style="width: 70%; height: 70%" title="Eid Mubarak"> -->
-<iframe src="static.html" style="border:none;" width="400" height="270" scrolling="no">Browser not compatible.</iframe>
+function setTooltip(btn, message) {
+        console.log("hide-1");
+        $(btn).tooltip('hide')
+                .attr('data-original-title', message)
+                .tooltip('show');
+        console.log("show");
+}
 
-    ';
-	?>
-	<div class="well well-sm">    
-                  <h4><b>Our Support team is here !</b></h4><a class="btn btn-default btn-sm" onclick="pageDiv(9,'Tickets - OluxShop','tickets.html#open',0); return false;" href="tickets.html#open"><span class="glyphicon glyphicon-pencil"></span> Open a Ticket</a>
-                  <h5><b>Interested in becoming a seller at  Olux Shop ?</b></h5><a class="btn btn-primary btn-xs" href="seller.html" onclick="pageDiv(24,'Become Seller  - OluxShop','seller.html',0); return false;">Learn more</a>
-                  <h5><b>Available Payment Methods </b></h5>
-
-                  <img src="files/img/pmlogo2.png" height="48" width="49" title="PerfectMoney" onclick="pageDiv(11,'Add Balance - OluxShop','addBalance.html#perfectmoney',0); return false;" href="addBalance.html#perfectmoney" onmouseover="this.style.cursor='pointer'">
-                  <img src="files/img/btclogo.png" height="48" width="49" title="Bitcoin" onclick="pageDiv(11,'Add Balance - OluxShop','addBalance.html#bitcoin',0); return false;" href="addBalance.html#bitcoin" onmouseover="this.style.cursor='pointer'">
-                 
-      </div>
-	<?php
-	echo '
-                 
-      </div>
-  </div>
-'; ?>
+function hideTooltip(btn) {
+        setTimeout(function () { $(btn).tooltip('hide');
+                console.log("hide-2"); }, 1000);
+}
+</script>
