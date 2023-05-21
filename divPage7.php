@@ -39,7 +39,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 <td> </td>
 <td>id</td>
 <td>country</td>
-<td>sitename/td>
+<td>sitename</td>
 <td>infos</td>
 
 <td>
