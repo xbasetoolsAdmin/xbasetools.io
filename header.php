@@ -3,38 +3,59 @@
 <!DOCTYPE html>
 <html lang="">
 	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>XbaeTools</title>
+		<title>Xbasetools</title>
 		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
- <link rel="stylesheet"  href="flayout/css/util.css" />
- <link rel="stylesheet"   href="layout/css/bootstrap.min.css" />
-<link rel="stylesheet"    href="layout/css/all.min.css" />
-<link rel="stylesheet"    href="layout/css/flexslider5.css" />
-<link rel="stylesheet"    href="layout/css/main.css" />
-<link rel="stylesheet" type="text/css" href="files/css/flags.css" />
+	
+<link rel="stylesheet" href="layout/css/bootstrap.min.css">
+<script src=""https://code..jquery.com/jquery-3.5.1.min.js"></script>
+<script src="layout/js/clipboard.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="layout/js/bootstrap.min.js"></script>
+<script src="layout/js/bootbox.min.js"></script>
+<link rel="stylesheet" type="text/css" href="layout/css/flags.css" />
 
-<link rel="stylesheet"   href="//cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" />
-<script  src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css">
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.colVis.min.js"></script>
+<script src="js/jquery.dataTables.min.js"></script>
+<link href="//cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
 
-<script  src="https://code.jquery.com/jquery-3.6.4.mi.js"></script>
-<script type="text/javascript" src="js/jquery.datatables.min.js">
-</script>
-<script type="text/javascript" src="layout/js/bootstrap.min.js"></script>
- <script type="text/javascript" src="layout/js/bootbox.min.js"></script>
-<script type="text/javascript" src="files/js/clipboard.min.js"></script>
+<script async src="//www.googletagmanager.com/gtag/js?id=UA-177092549-1"></script>
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('set', {'$usrid': 'USER_ID'}); // Set the user ID using signed-in user_id.
+        gtag('config', 'UA-177092549-1');
+        </script>
+<link rel="stylesheet" href="layout/css/all.min.css" />
+<link rel="stylesheet" href="layout/css/main.css?v=12.9" />
+<link rel="stylesheet" href="layout/css/util.css" />
+<style>body{padding-top:80px}</style>
+<link rel="stylesheet" href="layout/fonts/iconic/css/material-design-iconic-font.min.css">
+<script src="layout/js/main.js"></script>
+<script type="text/javascript">
+            // Notice how this gets configured before we load Font Awesome
+            window.FontAwesomeConfig = { autoReplaceSvg: false }
+        </script>
+<style>
+            @import url(//fonts.googleapis.com/css?family=Roboto:400);
+            .navbar-nav .dropdown-menu
+            {
+            margin:0 !important
+            }
+        </style>
+</head>
 
-<script type="text/javascript" src="files/js/jquery.js"></script>
-<!---<script type="text/javascript" src="component/accounts.js"></script>---->         
-		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
-			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-		<![endif]-->
-	</head>
+ 
            
     
     
