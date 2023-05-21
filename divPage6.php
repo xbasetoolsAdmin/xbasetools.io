@@ -18,7 +18,6 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 <div class="col-sm-12 table-responsive">
 <table id="lead_data" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);">
 <thead>
-<thead>
     <tr>
               <th scope="col" ></th>
      <th scope="col" >Country</th>
