@@ -35,7 +35,7 @@ $(window).on("popstate", (function (t) {
                         };
                         "/" + a.Url != location.pathname && (1 != l ? history.pushState(a, a.Title, a.Url) : history.replaceState(a, a
                                 .Title, a.Url)), document.title = a.Title, $("#mainDiv").html(
-                                '<div id="mydiv"><img src="files/img/load2.gif" class="ajax-loader"></div>').show(), $.ajax({
+                                '<div id="mydiv"><img src="layout/img/load.gif" class="ajax-loader"></div>').show(), $.ajax({
                                 type: "GET"
                                 , url: "divPage" + o + ".html"
                                 , success: function (e) {
