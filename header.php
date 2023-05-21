@@ -1,5 +1,4 @@
 <?php ob_start(); session_start(); date_default_timezone_set('UTC'); include "includes/config.php"; if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {    header("location: login.html");    exit(); } $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']); ?>
-
 <!DOCTYPE html>
 <html lang="">
 	<head>
@@ -55,6 +54,8 @@
         </style>
 	<style>
  </head>
+	
+	
 <body class="them">
     <style>
         .navbar-nav .dropdown-menu {
@@ -253,8 +254,14 @@
  
            
     
-            <ul class="navbar-nav profile">
- 
+				
+				
+				
+				
+				
+				
+				
+                <ul class="navbar-nav profile">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bell text-danger"></i> <span class="badge badge-success">0</span></a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="color: var(--font-color); background-color: var(--color-nav);">
@@ -269,7 +276,7 @@
                     </a>
                 </li>
  
-                <li class="nav-item dropdown">
+                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Ticket <span class="badge badge-success">0</span></a>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="color: var(--font-color); background-color: var(--color-nav);">
