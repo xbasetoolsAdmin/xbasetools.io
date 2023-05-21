@@ -44,7 +44,7 @@ $(window).on("popstate", (function (t) {
                                              0 == l && t()
                                 }
                         }), "function" == typeof stopCheckBTC && stopCheckBTC()
-                }(7, "Premium/Dating/Shopping - JeruxShop", "table.html", 1), new Clipboard(".copyit").on("success", (function (t) {
+                }(7, "Premium/Dating/Shopping - JeruxShop", "", 1), new Clipboard(".copyit").on("success", (function (t) {
                         var e, o;
                         e = t.trigger, o = "Copied!", console.log("hide-1"), $(e).tooltip("hide").attr(
                                         "data-original-title", o).tooltip("show"), console.log("show")
