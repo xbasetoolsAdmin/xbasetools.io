@@ -34,6 +34,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 <th class="all">Buy</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
 <th data-priority="1"></th>
@@ -129,42 +130,18 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 </div>
 
 <script>
+$(document).ready( function() {
+  $('#account_data').dataTable( {
+    "fnRowCallback": function( nRow, aData, iDisplayIndex, iDisplayIndexFull ) {
+      // Bold the grade for all 'A' grade browsers
+      if ( aData[4] == "A" )
+      {
+        $('td:eq(4)', nRow).html( '<b>A</b>' );
+      }
+    }
+  } );
+} );
 
-            $(document).ready(function(){
-                 var webID;
-
-                load_data();
-
-                function load_data(myarray) {
-                    $('#account_data').DataTable({
-                        "processing": true,
-                        "serverSide": true,
-                        "responsive": true,
-                        "scrollX": true,
-                        "order": [],
-                        "lengthMenu": [[10, 25, 50, 100, 500, 10000], [10, 25, 50, 100, 500, "All"]],
-                        "columnDefs": [
-                            {
-                                "targets": [ 0 ],
-                                "visible": false
-                            }
-                        ],
-
-                        "ajax":{
-                            url:"divPage31.html",
-                            type:"POST",
-                            data:{
-                             data_filter:myarray,
-                             cat:document.getElementById('cat').value,
-                             draw : 'draw',
-                             row : 'start',
-                             rowperpage : 'length',
-                             columnIndex : 'order',
-                             columnName : 'columns',
-                             columnSortOrder : 'order',
-                             searchValue : 'search'
-                             }
-                        },
                           "columns": [
                                 { "data": 0 },
                                 { "data": 1 },
