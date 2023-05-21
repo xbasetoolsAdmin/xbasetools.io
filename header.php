@@ -239,7 +239,7 @@
                                                         ">
         <div class="navbar-brand" href="main" style="color: var(--font-color);"><img width="40px" src="layout/images/logo.png"> </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="navbar-toggler-icon"></i>
+            <span class="middle-navbar-toggler-icon"></i>
         </button>
         <div class="collapse navbar-collapse order-1" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
