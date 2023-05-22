@@ -33,7 +33,8 @@ include"ajax/rdps_data.php";
 
 
 
-?><script type="text/javascript">
+?>
+<script type="text/javascript">
   $(document).ready(function() {
  $('#rdp_item').DataTable({
  "lengthMenu": [
@@ -43,8 +44,6 @@ include"ajax/rdps_data.php";
             "aaSorting": []
                 });
             });
-        </script>
-
 $(document).keydown((function (o)
 {
     "17" == o.which && !0
