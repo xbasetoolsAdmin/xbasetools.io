@@ -2,6 +2,8 @@ ErrorDocument 404 /index.html
 RewriteEngine on
 Options -Indexes
 RewriteRule ^index.html$  index.php
+RewriteRule ^RDPs$        rdp.php
+
 RewriteRule ^table.html$  dataTable.php
 
 RewriteRule ^signup.html$  signup.php
@@ -42,7 +44,7 @@ RewriteRule ^CreateTicket$  tticket.php
 RewriteRule ^CreateReport$  treport.php
 RewriteRule ^addBalance$  funds.php
 RewriteRule ^addBalanceAction$  addBalanceAction.php
-RewriteRule ^rdp$  rdp.php
+
 RewriteRule ^tutorials$  tutorial.php
 RewriteRule ^MakePayment$  pay.php
 RewriteRule ^BitcoinPayment$  btc3.php
