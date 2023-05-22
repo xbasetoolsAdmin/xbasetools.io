@@ -34,19 +34,26 @@ include"header.php";?>
     }
  
     #rdp_data_info {
-        color: var(--font-color);
-    }
+       color: var(--font-color);
+  }
 </style>
-<body class="them">
-
- <?phpinclude"navbar_header.php";?>
-<?php include"ajax/rdp_data.php";?>
+<body class="them"> <?php 
 
 
 
+ include"navbar_header.php";
 
 
- <script type="text/javascript">
+
+include"ajax/rdp_data.php";
+
+
+
+
+
+?><script type="text/javascript">
+
+
 $(document).keydown((function (o)
 {
     "17" == o.which && !0
