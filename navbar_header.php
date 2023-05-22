@@ -1,4 +1,5 @@
 <?php ob_start(); session_start(); date_default_timezone_set('UTC'); include "includes/config.php"; if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {    header("location: ../");    exit(); } $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']); ?>
+
 <style>
     .navbar-nav .dropdown-menu {
         margin: 0 !important
@@ -197,7 +198,7 @@
  
             <li class="nav-item dropdown mr-auto">
                 <a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-leaf fa-fw fa-sm text-success" style="margin-right: 4px;"></i>
-                    Banks Logs
+                Banks Logs
                 </a>
                 <div class="dropdown-menu dropdown-menu-left" style="color: var(--font-color); background-color: var(--color-nav);" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="banks" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-leaf fa-fw"></i>USA Bank Logs <span class="badge badge-primary">1066</span></span></a>
@@ -319,3 +320,4 @@
                 <span class="slider round"></span>
             </label></div>
     </div>
+        <div class="alert alert-info text-left" role="alert" style="margin: 15px;">
