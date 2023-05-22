@@ -37,14 +37,12 @@ include"header.php";?>
         color: var(--font-color);
     }
 </style>
-
-
+<body class="them">
 <?php
 include"navbar_header.php";
-include"right_navbar_header.php";
+include"right_navbar_profile.php";
 ?>
 
 
 
  
-<body class="them">
