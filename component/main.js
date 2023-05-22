@@ -1,48 +1,57 @@
 
-
-            $(document).keydown(function(event) {
-                if (event.which == "17")
-                    cntrlIsPressed = true;
-            });
+    function ajaxinfo() {
+        $.ajax({
+            type: 'GET',
+            url: 'ajaxinfo.html',
+            timeout: 10000,
  
-            $(document).keyup(function() {
-                cntrlIsPressed = false;
-            });
+            success: function(data) {
+                if (data != '01') {
+                    var data = JSON.parse(data);
+                    for (var prop in data) {
+                        $("#" + prop).html(data[prop]).show();
+                    }
+                } else {
+                    window.location = "logout.html";
+                }
+            }
+        });
  
-            var cntrlIsPressed = false;
+    }
+    setInterval(function() {
+        ajaxinfo()
+    }, 3000);
+ 
+    ajaxinfo();
+ 
+    $(document).keydown(function(event) {
+        if (event.which == "17")
+            cntrlIsPressed = true;
+    });
+ 
+    $(document).keyup(function() {
+        cntrlIsPressed = false;
+    });
+ 
+    var cntrlIsPressed = false;
  
  
-            $(window).on("popstate", function(e) {
-                location.replace(document.location);
- 
-            });
- 
- 
-            $(window).on('load', function() {
-                $('.dropdown').hover(function() {
-                    $('.dropdown-toggle', this).trigger('click');
-                });
-                pageDiv(9, 'leads - Xbasetools', 'tutorials', 1);
-                var clipboard = new Clipboard('.copyit');
-                clipboard.on('success', function(e) {
-                    setTooltip(e.trigger, 'Copied!');
-                    hideTooltip(e.trigger);
-                    e.clearSelection();
-                });
- 
-            });
- 
- 
-            function setTooltip(btn, message) {
-                //console.log("hide-1");
-                $(btn).tooltip('hide')
-                    .attr('data-original-title', message)
-                    .tooltip('show');
-                //console.log("show");
+    function pageDiv(n, t, u, x) {
+        if (cntrlIsPressed) {
+            window.open(u, '_blank');
+            return false;
+        }
+        var obj = {
+            Title: t,
+            Url: u
+        };
+        if (("/" + obj.Url) != location.pathname) {
+            if (x != 1) {
+                history.pushState(obj, obj.Title, obj.Url);
+            } else {
+                history.replaceState(obj, obj.Title, obj.Url);
             }
  
-            function hideTooltip(btn) {
-                setTimeout(function() {
-                    $(btn).tooltip('hide'); /*console.log("hide-2");*/
-                }, 1000);
-            }
+        }
+        document.title = obj.Title;
+        $("#mainDiv").html('<div id="mydiv"><img src="files/img/load2.gif" class="ajax-loader"></div>').show();
