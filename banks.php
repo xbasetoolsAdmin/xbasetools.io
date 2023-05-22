@@ -25,7 +25,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
     <link rel="shortcut icon" href="../../favicon.ico" />
     <title>AddBalance</title>
     <link rel="stylesheet" href="layout/css/bootstrap.min.css">
-    <script src="layout/js/jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="layout/js/clipboard.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="layout/js/bootstrap.min.js"></script>
