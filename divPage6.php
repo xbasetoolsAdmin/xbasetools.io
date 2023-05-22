@@ -19,5 +19,15 @@
                     </tr>
                 </thead>
                 <tnody>
-               
+                <tr>
+                    <th data-priority="1"></th>
+                        '+'.ID.'+'
+                        <th data-priority="3">Country</th>
+                        <th data-priority="6">Description</th>
+                        <th data-priority="7">Email N</th>
+                        <th data-priority="8">Seller</th>
+                        <th data-priority="9">Price</th>
+                        <th data-priority="10">Added on </th>
+                        <th class="all">Buy</th>
+                    </tr>
             
