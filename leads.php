@@ -471,6 +471,7 @@ ob_start(); session_start(); date_default_timezone_set('UTC'); include "includes
         </div>
     </nav>
  <?php include"ajax/leads_data.php";?>
+
     <script type="text/javascript">
         $(document).keydown(function(event) {
             if (event.which == "17")
@@ -519,6 +520,7 @@ ob_start(); session_start(); date_default_timezone_set('UTC'); include "includes
             }, 1000);
         }
     </script>
+    <?php include"footer.php";?>
 </body>
  
 </html>
