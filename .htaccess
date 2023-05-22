@@ -2,7 +2,15 @@ ErrorDocument 404 /index.html
 RewriteEngine on
 Options -Indexes
 RewriteRule ^index.html$  index.php
-RewriteRule ^RDPs$        rdp.php
+RewriteRule ^RDPs$         rdp.php
+RewriteRule ^rdp$          rdp.php
+RewriteRule ^rdp.html$     rdp.php
+
+
+
+
+
+
 
 RewriteRule ^table.html$  dataTable.php
 
