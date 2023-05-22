@@ -34,7 +34,16 @@ include"ajax/rdps_data.php";
 
 
 ?><script type="text/javascript">
-
+  $(document).ready(function() {
+ $('#rdp_item').DataTable({
+ "lengthMenu": [
+ [10, 25, 100, 500, -1],
+  [10, 25, 100, 500, "All"] ],
+'iDisplayLength': 1000,
+            "aaSorting": []
+                });
+            });
+        </script>
 
 $(document).keydown((function (o)
 {
