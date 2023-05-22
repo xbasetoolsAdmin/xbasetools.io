@@ -33,7 +33,7 @@
                     </d>
                     <script>
             $(document).ready(function() {
-                $('#example').DataTable({
+                $('#leads_data').DataTable({
                     "lengthMenu": [
                         [10, 25, 100, 500, -1],
                         [10, 25, 100, 500, "All"]
