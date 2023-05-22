@@ -12,6 +12,24 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 ?>
 
 
+ <div class="row m-2 pt-3 " style="max-width:100%; color: var(--font-color); background-color: var(--color-card);">
+        <div class="col-sm-12 table-responsive" id="mainDiv">
+            <table id="lead_data" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);">
+                <thead>
+                    <tr>
+        <th data-priority="1"></th>
+      <th scope="col" >Country</th>
+      <th scope="col">Bank Name</th>
+      <th scope="col">Balance</th>
+      <th scope="col">detail</th>
+      <th scope="col">Seller</th>
+      <th scope="col">Price</th>
+      <th scope="col">Added on </th>
+      <th scope="col">Buy</th>
+    </tr>
+</thead>
+  <tbody>
+
  <?php
 include("cr.php");
 $q = mysqli_query($dbcon, "SELECT * FROM banks WHERE sold='0' ORDER BY RAND()")or die(mysqli_error());
