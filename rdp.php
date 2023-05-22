@@ -38,61 +38,44 @@ include"header.php";?>
     }
 </style>
 <body class="them">
-<?php
-include"navbar_header.php";
-?>
+
+ <?phpinclude"navbar_header.php";?>
+<?php include"ajax/rdp_data.php";?>
 
 
-    </nav>
- <?php include"ajax/rdp_data.php";?>
 
-    <script type="text/javascript">
-        $(document).keydown(function(event) {
-            if (event.which == "17")
-                cntrlIsPressed = true;
-        });
- 
-        $(document).keyup(function() {
-            cntrlIsPressed = false;
-        });
- 
-        var cntrlIsPressed = false;
- 
- 
-        $(window).on("popstate", function(e) {
-            location.replace(document.location);
- 
-        });
- 
- 
-        $(window).on('load', function() {
-            $('.dropdown').hover(function() {
-                $('.dropdown-toggle', this).trigger('click');
-            });
-            pageDiv(6, 'RDPS-xbaseTools', 'RDPs', 1);
-            var clipboard = new Clipboard('.copyit');
-            clipboard.on('success', function(e) {
-                setTooltip(e.trigger, 'Copied!');
-                hideTooltip(e.trigger);
-                e.clearSelection();
-            });
- 
-        });
- 
- 
-        function setTooltip(btn, message) {
-            //console.log("hide-1");
-            $(btn).tooltip('hide')
-                .attr('data-original-title', message)
-                .tooltip('show');
-            //console.log("show");
-        }
- 
-        function hideTooltip(btn) {
-            setTimeout(function() {
-                $(btn).tooltip('hide'); /*console.log("hide-2");*/
-            }, 1000);
-        }
+
+
+ <script type="text/javascript">
+$(document).keydown((function (o)
+{
+    "17" == o.which && !0
+})), $(document).keyup((function ()
+{
+    !1
+}));
+$(window).on("popstate", (function (o)
+{
+    location.replace(document.location)
+})), $(window).on("load", (function ()
+{
+    $(".dropdown").hover((function ()
+    {
+        $(".dropdown-toggle", this).trigger("click")
+    })), pageDiv(6, "RDPS-xbaseTools", "RDPs", 1), new Clipboard(".copyit").on("success", (function (o)
+    {
+        var t, i;
+        t = o.trigger, i = "Copied!", $(t).tooltip("hide").attr("data-original-title", i).tooltip("show")
+            , function (o)
+            {
+                setTimeout((function ()
+                {
+                    $(o).tooltip("hide")
+                }), 1e3)
+            }(o.trigger), o.clearSelection()
+    }))
+}));
+
     </script>
     
     
