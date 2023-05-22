@@ -44,13 +44,14 @@ $q = mysqli_query($dbcon,"SELECT * FROM rdps WHERE sold='0' ORDER BY RAND()")or 
 			 $SellerNick = "seller".$rpw["id"]."";
      echo "
  <tr>    
-    <td id='rdp_country'><i class='flag-icon flag-icon-$countrycode'></i>&nbsp;".htmlspecialchars($row['country'])." </td>
+ <td> ".htmlspecialchars($row['id'])."</td>
+    <td id='country'><i class='flag-icon flag-icon-$countrycode'></i>&nbsp;".htmlspecialchars($row['country'])." </td>
     <td> ".htmlspecialchars($row['city'])." </td>
-    <td id='rdp_windows'> ".htmlspecialchars($row['windows'])." </td>
+    <td id='windows'> ".htmlspecialchars($row['windows'])." </td>
     <td> ".htmlspecialchars($row['ram'])." </td>
-    <td id='rdp_access'> ".htmlspecialchars($row['access'])." </td>
-    <td id='rdp_hosting'> ".htmlspecialchars($row['hosting'])."</td>
-    <td id='rdp_seller'> ".htmlspecialchars($SellerNick)."</td>
+    <td id='access'> ".htmlspecialchars($row['access'])." </td>
+    <td id='hosting'> ".htmlspecialchars($row['hosting'])."</td>
+    <td id='seller'> ".htmlspecialchars($SellerNick)."</td>
     <td> ".htmlspecialchars($row['price'])."</td>
 	    <td> ".htmlspecialchars($row['date'])."</td>
     <td>";
