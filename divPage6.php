@@ -21,7 +21,7 @@
                 <tnody>
                 <tr>
                     <th data-priority="1"></th>
-                        '+'.ID.'+'
+                        <th class="all">ID</th>
                         <th data-priority="3">Country</th>
                         <th data-priority="6">Description</th>
                         <th data-priority="7">Email N</th>
@@ -30,4 +30,20 @@
                         <th data-priority="10">Added on </th>
                         <th class="all">Buy</th>
                     </tr>
-            
+                    <span>=
+        
+
+
+        <script>
+            $(document).ready(function() {
+                $('#example').DataTable({
+                    "lengthMenu": [
+                        [10, 25, 100, 500, -1],
+                        [10, 25, 100, 500, "All"]
+                    ],
+                    'iDisplayLength': 1000,
+                    "aaSorting": []
+                });
+            });
+        </script>
+ 
