@@ -30,11 +30,8 @@
                         <th data-priority="10">Added on </th>
                         <th class="all">Buy</th>
                     </tr>
-                    <span>=
-        
-
-
-        <script>
+                    </d>
+                    <script>
             $(document).ready(function() {
                 $('#example').DataTable({
                     "lengthMenu": [
