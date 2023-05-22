@@ -40,7 +40,6 @@ include"header.php";?>
 <body class="them">
 <?php
 include"navbar_header.php";
-include"right_navbar_profile.php";
 ?>
 
 
