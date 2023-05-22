@@ -18,9 +18,11 @@
                         <th class="all">Buy</th>
                     </tr>
                 </thead>
-                
-               ^^ody
                 <tnody>
+               
+                
+                
             </table>
+            
         </div>
     </div>
