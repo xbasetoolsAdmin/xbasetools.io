@@ -77,7 +77,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
  
     }
 </style>
-<script type="text/javascript" src="component/main.js"></script>
+
 
 <style>
     .navbar {
@@ -156,6 +156,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
         </div>
         <!-- /.container-fluid -->
     </nav>
+    <?php include"navbar_header.php";?>
     <?php include"ajax/banks_data.php";?>
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -175,6 +176,8 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
     </div>
   </div>
 </div>   
+<script type="text/javascript" src="component/main.js">
+</script>
 <script type="text/javascript">
 	 $(document).ready(function() {
  $('#banks_item').DataTable({
