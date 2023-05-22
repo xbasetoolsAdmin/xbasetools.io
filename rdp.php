@@ -17,7 +17,7 @@ include"header.php";
 
 
 
-include"ajax/rdp_data.php";
+include"ajax/rdps_data.php";
 
 
 
