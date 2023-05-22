@@ -1,51 +1,6 @@
 
 <?php ob_start(); session_start(); date_default_timezone_set('UTC'); include "includes/config.php"; if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {    header("location: ../");    exit(); } $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']); ?> 
 
-
-
- <style>
-
-    .display td {
-        background: var(--color-card);
-        color: var(--font-color);
- 
-    }
- 
-    .dataTables_wrapper .dataTables_paginate .paginate_button {
- 
-        color: var(--font-color);
- 
-    }
- 
-    #balance_data_paginate .paginate_button {
-        color: var(--font-color);
- 
-    }
- 
-    .alert-info {
-        color: var(--color-info);
-        background-color: var(--color-backinfo);
-        border-color: var(--color-borderinfo);
- 
-    }
- 
-    #balance_data_filter {
-        color: var(--font-color);
-    }
- 
-    #balance_data_length {
-        color: var(--font-color);
-    }
- 
-    #balance_data_paginate {
-        color: var(--font-color);
-    }
- 
-    #balance_data_info {
-        color: var(--font-color);
-    }
-</style>
-
  <div class="alert alert-info text-left" role="alert" style="margin: 15px;">
         <ul>
             <li>We Have Fresh E-mails Lists for Diffrents Countries ( You Can Use it for Spam ). </li>
