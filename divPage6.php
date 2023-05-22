@@ -20,9 +20,5 @@
                 </thead>
                 <tnody>
                
-                
-                
-            </table>
             
-        </div>
     </div>
