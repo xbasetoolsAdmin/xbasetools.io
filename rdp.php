@@ -34,45 +34,80 @@ include"ajax/rdps_data.php";
 
 
 ?>
-<script type="text/javascript">
-  $(document).ready(function() {
- $('#rdp_item').DataTable({
- "lengthMenu": [
- [10, 25, 100, 500, -1],
-  [10, 25, 100, 500, "All"] ],
-'iDisplayLength': 1000,
-            "aaSorting": []
-                });
+        <div style="padding-left:20px; display:inline-block; margin-bottom:10px">
+    <div class="row m-2 pt-3" style="color: var(--font-color); background-color: var(--color-card);">
+        <div class="col-sm-12 table-responsive" id="mainDiv">
+            <table id="rdp_item" class="display responsive table-hover" style="width:100%" style="color: var(--font-color); background-color: var(--color-card);">
+                <thead>
+                    <tr>
+        <th data-priority="1"></th>
+          <th class="all">ID</th>
+      <th data-priority="3">Country</th>
+    <th data-priority="15">State</th>           <th data-priority="14">Windows</th>
+                        <th data-priority="6">Ram</th>
+                        <th data-priority="17">Access</th>
+                        <th data-priority="8">Hosting</th>
+                        <th data-priority="9">CPU</th>
+                        <th data-priority="11">Seller</th>
+                        <th data-priority="12">Source</th>
+                        <th data-priority="13">Price</th>
+                       <th data-priority="16">Added on</th>
+                        <th class="all">Buy</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <div id="mainDiv"></div>
+    <script type="text/javascript">
+        $(document).keydown(function(event) {
+            if (event.which == "17")
+                cntrlIsPressed = true;
+        });
+ 
+        $(document).keyup(function() {
+            cntrlIsPressed = false;
+        });
+ 
+        var cntrlIsPressed = false;
+ 
+ 
+        $(window).on("popstate", function(e) {
+            location.replace(document.location);
+ 
+        });
+ 
+ 
+        $(window).on('load', function() {
+            $('.dropdown').hover(function() {
+                $('.dropdown-toggle', this).trigger('click');
             });
-$(document).keydown((function (o)
-{
-    "17" == o.which && !0
-})), $(document).keyup((function ()
-{
-    !1
-}));
-$(window).on("popstate", (function (o)
-{
-    location.replace(document.location)
-})), $(window).on("load", (function ()
-{
-    $(".dropdown").hover((function ()
-    {
-        $(".dropdown-toggle", this).trigger("click")
-    })), pageDiv(7, "RDPS-xbaseTools", "RDPs", 1), new Clipboard(".copyit").on("success", (function (o)
-    {
-        var t, i;
-        t = o.trigger, i = "Copied!", $(t).tooltip("hide").attr("data-original-title", i).tooltip("show")
-            , function (o)
-            {
-                setTimeout((function ()
-                {
-                    $(o).tooltip("hide")
-                }), 1e3)
-            }(o.trigger), o.clearSelection()
-    }))
-}));
-</script> <?php 
+            pageDiv(7, 'Add Balance - OdinShop', 'addBalance', 1);
+            var clipboard = new Clipboard('.copyit');
+            clipboard.on('success', function(e) {
+                setTooltip(e.trigger, 'Copied!');
+                hideTooltip(e.trigger);
+                e.clearSelection();
+            });
+ 
+        });
+ 
+ 
+        function setTooltip(btn, message) {
+            //console.log("hide-1");
+            $(btn).tooltip('hide')
+                .attr('data-original-title', message)
+                .tooltip('show');
+            //console.log("show");
+        }
+ 
+        function hideTooltip(btn) {
+            setTimeout(function() {
+                $(btn).tooltip('hide'); /*console.log("hide-2");*/
+            }, 1000);
+        } 
+    </script>
+ <?php 
 
 
 
