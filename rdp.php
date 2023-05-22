@@ -15,13 +15,13 @@ var(--font-color); } .alert-info {color:
 var(--color-info); background-color: 
 var(--color-backinfo); border-color: 
 var(--color-borderinfo);}
-
-#rdp_data_filter { color: var(--font-color); }
-#rdp_data_length { color: var(--font-color);}
-#rdp_data_paginate { color: var(--font-color); }
-#rdp_data_info { color: var(--font-color); }
+#rdp_item_filter { color: var(--font-color); }
+#rdp_item_length { color: var(--font-color);}
+#rdp_item_paginate { color: var(--font-color); }
+#rdp_item_info { color: var(--font-color); }
 </style>
-<body class="them"> <?php 
+<body class="them">
+ <?php 
 
 
 
