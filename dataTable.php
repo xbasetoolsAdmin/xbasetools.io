@@ -533,7 +533,7 @@
             $('.dropdown').hover(function() {
                 $('.dropdown-toggle', this).trigger('click');
             });
-            pageDiv(13, 'Add Balance - OdinShop', 'addBalance', 1);
+            pageDiv(7, 'Add Balance - OdinShop', 'table.html', 1);
             var clipboard = new Clipboard('.copyit');
             clipboard.on('success', function(e) {
                 setTooltip(e.trigger, 'Copied!');
