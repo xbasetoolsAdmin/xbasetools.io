@@ -30,7 +30,8 @@
                         <th data-priority="10">Added on </th>
                         <th class="all">Buy</th>
                     </tr>
-                    </d>I'
+                    <
+                    </div>
                     <script>
             $(document).ready(function() {
                 $('#leads_data').DataTable({
