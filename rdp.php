@@ -44,7 +44,7 @@ include"navbar_header.php";
 
 
     </nav>
- <?php include"ajax/leads_data.php";?>
+ <?php include"ajax/rdp_data.php";?>
 
     <script type="text/javascript">
         $(document).keydown(function(event) {
