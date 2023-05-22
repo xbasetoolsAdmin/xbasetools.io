@@ -47,7 +47,7 @@ $q = mysqli_query($dbcon, "SELECT * FROM banks WHERE sold='0' ORDER BY RAND()")o
      echo "
  <tr>     
                                        <td></td>
-	  <td> ".$row['id']."</td>";			       
+	  <td> ".$row['id']."</td>			       
     <td id='bank_country'><i class='flag-icon flag-icon-$countrycode'></i>&nbsp;".htmlspecialchars($row['country'])." </td>
     <td id='bank_sitename'> ".htmlspecialchars($row['bankname'])." </td> 
     <td> ".htmlspecialchars($row['balance'])." </td> 
