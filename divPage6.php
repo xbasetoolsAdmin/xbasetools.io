@@ -21,6 +21,6 @@
                 
                ^^ody
                 <tnody>
-            </table>k
+            </table>
         </div>
     </div>
