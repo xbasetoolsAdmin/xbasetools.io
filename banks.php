@@ -179,13 +179,6 @@ function hideTooltip(btn) {
                 background-color: #001f3f;
             }
         </style>
-        </nav>
-<div id="mainDiv">
-
-<!DOCTYPE html>
-<html>
- 
-<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="alfacoins-site-verification" content="5ef8c2279aa605ef8c2279aa965ef8c2279aacb_ALFAcoins">
