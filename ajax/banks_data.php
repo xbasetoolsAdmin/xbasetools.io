@@ -9,22 +9,27 @@
             <li>There is <b> 0 </b> Available.</li>
         </ul>
     </div>
-<ul class="nav nav-tabs">
-  <li class="active"><a href="#filter" data-toggle="tab">Filter</a></li>
-</ul>
-<div id="myTabContent" class="tab-content" >
-  <div class="tab-pane active in" id="filter"><table class="table"><thead><tr><th>Country</th>
-<th>Site Name</th>
-<th>Seller</th>
-<th></th></tr></thead><tbody><tr><td><select class='filterselect form-control input-sm' name="bank_country"><option value="">ALL</option>
-<?php
+    
+    <input type=hidden id="type" name="type" value="5" />
+    <div class="row m-3 pt-1" style="color: var(--font-color);">
+        <div class="col-xs-6 col-sm-4 col-lg-2" style="display:inline-block">
+            <label for="infos" style="margin-bottom: 10px; margin-top: 5px">Description:</label>
+            <input type="#filter" class="form-control" id="infos" style="color: var(--font-color); background-color: var(--color-card);">
+        </div>
+        <div class="col-xs-6 col-sm-4 col-lg-2" style="display:inline-block">
+            <label for="Country" style="margin-bottom: 10px; margin-top: 5px">Country :</label>
+            <select name="country" id="country" class="form-control" style="color: var(--font-color); background-color: var(--color-card);">
+                 <option value="">All Countries</option> <?php
 $query = mysqli_query($dbcon, "SELECT DISTINCT(`country`) FROM `banks` WHERE `sold` = '0' ORDER BY country ASC");
 	while($row = mysqli_fetch_assoc($query)){
-	echo '<option value="'.$row['country'].'">'.$row['country'].'</option>';
-	}
+	echo '<option value="'.$row['country'].'">'.$row['country'].'</option>';	}
 ?>
-</select></td><td><input class='filterinput form-control input-sm' name="bank_sitename" size='3'></td><td><select class='filterselect form-control input-sm' name="bank_seller"><option value="">ALL</option>
-<?php
+</select>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-lg-2" style="display:inline-block">
+            <label for="seller" style="margin-bottom: 10px; margin-top: 5px">Seller :</label>
+            <select name="seller" id="seller" class="form-control" style="color: var(--font-color); background-color: var(--color-card);">
+                <option value="">All</option> <?php
 $query = mysqli_query($dbcon, "SELECT DISTINCT(`resseller`) FROM `banks` WHERE `sold` = '0' ORDER BY resseller ASC");
 	while($row = mysqli_fetch_assoc($query)){
 		 $qer = mysqli_query($dbcon, "SELECT DISTINCT(`id`) FROM resseller WHERE username='".$row['resseller']."' ORDER BY id ASC")or die(mysql_error());
@@ -33,8 +38,9 @@ $query = mysqli_query($dbcon, "SELECT DISTINCT(`resseller`) FROM `banks` WHERE `
 	echo '<option value="'.$SellerNick.'">'.$SellerNick.'</option>';
 	}
 ?>
-</select></td><td><button id='filterbutton'class="btn btn-primary btn-sm" disabled>Filter <span class="glyphicon glyphicon-filter"></span></button></td></tr></tbody></table></div>
-</div>
+            </select>
+        </div>
+    </div>
 
  <div class="row m-2 pt-3 " style="max-width:100%; color: var(--font-color); background-color: var(--color-card);">
         <div class="col-sm-12 table-responsive" id="mainDiv">
@@ -96,5 +102,6 @@ function openitem(order){
     }});
 
 }
-
 </script>
+
+
