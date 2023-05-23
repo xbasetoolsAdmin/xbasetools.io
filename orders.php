@@ -597,7 +597,7 @@
             function load_data(seller) {
                 $('#order_data').DataTable({
                     "processing": false,
-                    "serverSide": true,
+                    "serverSide": false,
                     "order": [],
                     "columnDefs": [{
                         "targets": [0],
