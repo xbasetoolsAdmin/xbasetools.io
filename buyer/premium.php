@@ -499,6 +499,47 @@ $r1=mysqli_num_rows($s1);?> </b> Accounts Available.</li>
 <th class="all">Buy</th>
 </tr>
 </thead>
+<thody>
+        
+
+<?php
+	///////////////// premium
+ if ($rrrrx[‘acctype’] == “account”) {
+	 $itemid = $rrrrx[‘s_id’];
+$qe = mysqli_query($dbcon, “SELECT * FROM accounts WHERE id=‘$itemid’”) or die(mysql_error());
+while ($rowe = mysqli_fetch_assoc($qe))
+
+ {
+
+$country = $rowe[‘country’];
+$site = $rowe[‘sitename’];
+$description = $rowe[‘infos’];
+$information = $rowe[‘url’];
+$price = $rowe[‘price’];
+$code = array_search(“$country”, $countrycodes);
+$countrycode = strtolower($code);
+?>
+
+<table class=“table”>
+<tr>
+
+  <td>
+
+  </td>
+  
+ <td>
+  
+    <span class=“flag-icon flag-icon-<?php echo htmlspecialchars($countrycode); ?>”></span> <?php echo htmlspecialchars($country); ?>
+  
+  <?php echo ($description); ?>
+  
+<?php echo ($site); ?>
+  <td><?php echo ($information); ?>
+  <?php echo ($price); ?>$</td>
+        
+        
+        
+</tbody>
 </table>
 </div>
 </div>
