@@ -12,14 +12,10 @@ if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
 $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 ?>
 <style>
-<?php include"display/banks_table_filter.php";?>
-
-
+     <?php include"display/banks_logs.php";?>
     </div>
     <?php include"navbar_header.php";?>
-        </div>
-        
-        
+   </div>
         </div>
     <?php include"ajax/banks_data.php";
     
