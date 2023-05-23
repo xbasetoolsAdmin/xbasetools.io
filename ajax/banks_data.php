@@ -29,7 +29,7 @@ $query = mysqli_query($dbcon, "SELECT DISTINCT(`resseller`) FROM `banks` WHERE `
 
  <div class="row m-2 pt-3 " style="max-width:100%; color: var(--font-color); background-color: var(--color-card);">
         <div class="col-sm-12 table-responsive" id="mainDiv">
-            <table id="lead_data" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);">
+            <table id="banks_item" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);">
                 <thead>
                     <tr>
         <th data-priority="1"></th>
@@ -39,8 +39,11 @@ $query = mysqli_query($dbcon, "SELECT DISTINCT(`resseller`) FROM `banks` WHERE `
       <th scope="col">detail</th>
       <th scope="col">Seller</th>
       <th scope="col">Price</th>
-      <th scope="col">Added on </th>
+        <th data-priority="1">Created Date</th>
       <th scope="col">Buy</th>
     </tr>
 </thead>
-  <tbody>
+  </table>
+		</div>
+		</div>
+		</div>
