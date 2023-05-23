@@ -36,8 +36,8 @@
     
     
     <div class="row m-2 pt-3 " style="max-width:100%; color: var(--font-color); background-color: var(--color-card);">
-        <div class="col-sm-12 table-responsive">
-            <table id="lead_data" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);">
+        <div class="col-sm-12 table-responsive id="mainDiv">
+            <table id="lead_item" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);">
                 <thead>
                     <tr>
                         <th data-priority="1"></th>
@@ -61,7 +61,7 @@
     <script>
         $(document).ready(function() {
             var webID;
-            load_data();
+            load_item();
  
             function load_data(myarray) {
                 $('#lead_data').DataTable({
@@ -80,10 +80,10 @@
                     }],
  
                     "ajax": {
-                        url: "divPage32.html",
+                        url: "divPage6.html",
                         type: "POST",
                         data: {
-                            data_filter: myarray,
+                            data_filter: array_search,
                             type: document.getElementById('type').value,
                             draw: 'draw',
                             row: 'start',
