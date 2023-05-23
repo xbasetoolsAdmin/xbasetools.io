@@ -17,11 +17,12 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
     </div>
     <?php include"navbar_header.php";?>
         </div>
+        
+        
         </div>
-
-    <?php include"ajax/banks_data.php";?>
-
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <?php include"ajax/banks_data.php";
+    
+    ?><div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -29,7 +30,6 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
         <h4 class="modal-title" id="myModalLabel"></h4>
       </div>
       <div class="modal-body" id="modelbody">
-
 
       </div>
       <div class="modal-footer">
