@@ -1,4 +1,4 @@
-
+<?php include"../imcludes/config.php";?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -440,7 +440,8 @@ a.closearb {
 <div class="alert alert-info text-left" role="alert" style="margin: 15px;">
 <ul>
 <li>For Any problem for account after buy just open report and seller will fix it or replace.</li>
-<li>There is <b> 15 </b> banks Available.</li>
+<li>There is <b> <li>Unsold Premium Accounts : <b><?php $s12 = mysqli_query($dbcon, "SELECT * FROM accounts where resseller='$uid' and sold='0'");$r11=mysqli_num_rows($s12);
+ echo $r11;?></b></li></b> banks Available.</li>
 </ul>
 </div>
 <input type=hidden id="cat" name="cat" value="2" />
