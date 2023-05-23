@@ -1,12 +1,31 @@
 <?php ob_start(); session_start(); date_default_timezone_set('UTC'); include "includes/config.php"; if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {    header("location: login.html");    exit(); } $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']); ?> 
 
-
+    <div class="alert alert-info text-left" role="alert" style="margin: 15px;">
+        <ul>
+            <li>We Have Fresh E-mails Lists for Diffrents Countries ( You Can Use it for Spam ). </li>
+            <li>Our E-mails Lists Guarante for you Good results because most of them are from Shops and Big Sites .</li>
+            <li>Combo use for cracking (Brute forcing attack) not use for login to email.</li>
+            <li>There is <b> 0 </b> Available.</li>
+        </ul>
+    </div>
+    
+    
+    <input type=hidden id="type" name="type" value="8" />
+    <div class="row m-3 pt-1" style="color: var(--font-color);">
+        <div class="col-xs-6 col-sm-4 col-lg-2" style="display:inline-block">
+            <label for="infos" style="margin-bottom: 10px; margin-top: 5px">Description:</label>
+            <input type="search" class="form-control" id="infos" style="color: var(--font-color); background-color: var(--color-card);">
+        </div>
+        
+        
         <div class="col-xs-6 col-sm-4 col-lg-2" style="display:inline-block">
             <label for="Country" style="margin-bottom: 10px; margin-top: 5px">Country :</label>
             <select name="country" id="country" class="form-control" style="color: var(--font-color); background-color: var(--color-card);">
                 <option value="">All Countries</option>
             </select>
         </div>
+        
+        
         <div class="col-xs-6 col-sm-4 col-lg-2" style="display:inline-block">
             <label for="seller" style="margin-bottom: 10px; margin-top: 5px">Seller :</label>
             <select name="seller" id="seller" class="form-control" style="color: var(--font-color); background-color: var(--color-card);">
@@ -14,23 +33,26 @@
             </select>
         </div>
     </div>
- 
- <div class="row m-2 pt-3 " style="max-width:100%; color: var(--font-color); background-color: var(--color-card);">
-        <div class="col-sm-12 table-responsive" id="mainDiv">
-            <table id="banks_data" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);">
+    
+    
+    <div class="row m-2 pt-3 " style="max-width:100%; color: var(--font-color); background-color: var(--color-card);">
+        <div class="col-sm-12 table-responsive">
+            <table id="lead_data" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);">
                 <thead>
                     <tr>
-        <th data-priority="1"></th>
-      <th scope="col" >Country</th>
-      <th scope="col">Bank Name</th>
-      <th scope="col">Balance</th>
-      <th scope="col">detail</th>
-      <th scope="col">Seller</th>
-      <th scope="col">Price</th>
-      <th scope="col">Added on </th>
-      <th scope="col">Buy</th>
-    </tr>
-</thead>
-</table>
+                        <th data-priority="1"></th>
+                        <th class="all">ID</th>
+                        <th data-priority="3">Country</th>
+                        <th data-priority="6">Description</th>
+                        <th data-priority="7">Email N</th>
+                        <th data-priority="8">Seller</th>
+                     <!---   <th data-priority="2">Proof</th>--->
+                        <th data-priority="9">Price</th>
+                        <th data-priority="10">Added on </th>
+                        <th class="all">Buy</th>
+                    </tr>
+                </thead>
+            </table>
         </div>
     </div>
+
