@@ -44,6 +44,17 @@ $query = mysqli_query($dbcon, "SELECT DISTINCT(`resseller`) FROM `banks` WHERE `
     </tr>
 </thead>
   </table>
+<script type="text/javascript">
+	 $(document).ready(function() {
+ $('#banks_item').DataTable({
+ "lengthMenu": [
+ [10, 25, 100, 500, -1],
+  [10, 25, 100, 500, "All"] ],
+'iDisplayLength': 1000,
+            "aaSorting": []
+                });
+            });
+	</script>
 		</div>
 		</div>
 		</div>
