@@ -1,4 +1,21 @@
+<?php
+function ambilKata($param, $kata1, $kata2){
+    if(strpos($param, $kata1) === FALSE) return FALSE;
+    if(strpos($param, $kata2) === FALSE) return FALSE;
+    $start = strpos($param, $kata1) + strlen($kata1);
+    $end = strpos($param, $kata2, $start);
+    $return = substr($param, $start, $end - $start);
+    return $return;
+}
+include "header.php";
+include "cr.php";
 
+$id = $_GET['id'];
+$myid = mysqli_real_escape_string($dbcon, $id);
+
+$get = mysqli_query($dbcon, "SELECT * FROM reports WHERE id='$myid'");
+$row = mysqli_fetch_assoc($get);
+?>
 <!DOCTYPE html>
 <html>
 <head>
