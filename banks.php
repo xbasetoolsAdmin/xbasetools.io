@@ -13,7 +13,6 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 ?>
 <style>
 <?php include"display/banks_table_filter.php";?>
-<body class="them">
     </div>
     <?php include"navbar_header.php";?>
         </div>
