@@ -1,9 +1,19 @@
  <?php include"header.php";?>
- <?php ob_start(); session_start(); date_default_timezone_set('UTC'); include "includes/config.php"; if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {    header("location: login.html");    exit(); } $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']); ?>
+    <?php
+ob_start();
+session_start();
+date_default_timezone_set('UTC');
+include "includes/config.php";
+
+if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
+    header("location: ../");
+    exit();
+}
+$usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']); ?>
 <?php 
-include"display/lead_logs.php";
+include"display/banks_logs.php";
 include"navbar_header.php";
-include"ajax/lead_data.php";
+include"ajax/banks_data.php";
  ?>
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -20,9 +30,8 @@ include"ajax/lead_data.php";
       </div>
     </div>
   </div>
-</div> 
-  
+</div>   
 <script type="text/javascript" src="component/main.js"></script>
-     <?php include"footer.php";?>
+    <?php include"footer.php";?>
     </body>
     </html>
