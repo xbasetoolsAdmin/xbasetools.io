@@ -605,8 +605,8 @@
                     }],
  
                     "ajax": {
-                        url: "divPage15.html",
-                        type: "POST",
+                        url: "ajaxinfo.html",
+                        type: "get",
                         data: {
                             seller: seller
                         }
