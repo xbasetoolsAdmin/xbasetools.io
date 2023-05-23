@@ -226,7 +226,7 @@ input:checked + .slider:before {
                                                           padding-bottom: 0.5rem;
                                                           padding-left: 1rem;
                                                         ">
-<a class="navbar-brand" href="main.html" style="color: var(--font-color);"><img width="40px" src="layout/images/logo.png"> Odin</a>
+<a class="navbar-brand" href="main.html" style="color: var(--font-color);"><img width="40px" src="layout/images/logo.png"> XbaseTools </a>
 <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 <i class="navbar-toggler-icon"></i>
 </button>
@@ -241,7 +241,6 @@ Hosts
 <a class="dropdown-item waves-effect waves-light" href="rdp.html" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-desktop fa-fw"></i> RDPs <span class="badge badge-primary">77</span></span></a>
 <a class="dropdown-item waves-effect waves-light" href="cPanel.html" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-tools fa-fw"></i> cPanels <span class="badge badge-primary">8874</span></span></a>
 <a class="dropdown-item waves-effect waves-light" href="shell.html" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-file-code fa-fw"></i> Shells <span class="badge badge-primary">1500</span></span></a>
-<a class="dropdown-item waves-effect waves-light" href="ssh.html" style="color: var(--font-color);"><span class="px-2"><i class="fab fa-linux"></i> SSH/WHM <span class="badge badge-primary">153</span></span></a>
 </div>
 </li>
 
@@ -268,14 +267,6 @@ Send
 </a>
 <div class="dropdown-menu dropdown-menu-left" style="color: var(--font-color); background-color: var(--color-nav);" aria-labelledby="navbarDropdown">
 <a class="dropdown-item waves-effect waves-light" href="leads-5.html" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-award"></i> 100% Validated Leads <span class="badge badge-primary">0</span></span></a>
-<a class="dropdown-item waves-effect waves-light" href="leads-1.html" style="color: var(--font-color);"><span class="px-2"><i class="fa fa-fire orange-color"></i> Email Only <span class="badge badge-primary">111</span></span></a>
-<a class="dropdown-item waves-effect waves-light" href="leads-2.html" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-passport"></i> Combo Email:Password <span class="badge badge-primary">0</span></span></a>
-<a class="dropdown-item waves-effect waves-light" href="leads-3.html" style="color: var(--font-color);"><span class="px-2"><i class="fab fa-battle-net"></i> Combo Username:Password <span class="badge badge-primary">0</span></span></a>
-<a class="dropdown-item waves-effect waves-light" href="leads-4.html" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-at"></i> Email Access <span class="badge badge-primary">0</span></span></a>
-<a class="dropdown-item waves-effect waves-light" href="leads-6.html" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-mobile-alt"></i> Phone Number Only <span class="badge badge-primary">20</span></span></a>
-<a class="dropdown-item waves-effect waves-light" href="leads-7.html" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-phone-square"></i> Combo Phone:Password <span class="badge badge-primary">0</span></span></a>
-<a class="dropdown-item waves-effect waves-light" href="leads-8.html" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-inbox"></i> Full Data <span class="badge badge-primary">0</span></span></a>
-<a class="dropdown-item waves-effect waves-light" href="leads-9.html" style="color: var(--font-color);"><span class="px-2"><i class="fab fa-facebook"></i> Social Media Data <span class="badge badge-primary">0</span></span></a>
 </div>
 </li>
 
