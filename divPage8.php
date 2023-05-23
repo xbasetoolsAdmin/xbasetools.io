@@ -14,20 +14,19 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 
  <div class="row m-2 pt-3 " style="max-width:100%; color: var(--font-color); background-color: var(--color-card);">
         <div class="col-sm-12 table-responsive" id="mainDiv">
-            <table id="banks_data" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);">
+            <table id="banks_item" class="display responsive table-hover" style="width:100%; color: var(--font-color); background-color: var(--color-card);">
                 <thead>
                     <tr>
 			    
-        <th data-priority="1"></th>
-        <th data-priority="1">ID</th>
-
+        <th class="all"> </th>
+       <th data-priority="1">ID</th>
       <th scope="col" >Country</th>
       <th scope="col">Bank Name</th>
       <th scope="col">Balance</th>
       <th scope="col">detail</th>
       <th scope="col">Seller</th>
       <th scope="col">Price</th>
-      <th scope="col">Added on </th>
+       <th class="all">Added on</th>
       <th scope="col">Buy</th>
     </tr>
 </thead>
@@ -45,8 +44,8 @@ $q = mysqli_query($dbcon, "SELECT * FROM banks WHERE sold='0' ORDER BY RAND()")o
 		   while($rpw = mysqli_fetch_assoc($qer))
 			 $SellerNick = "seller".$rpw["id"]."";
      echo "
- <tr>     
-                                       <td></td>
+ <tr>      
+                  <td> </td>
 	  <td> ".$row['id']."</td>			       
     <td id='bank_country'><i class='flag-icon flag-icon-$countrycode'></i>&nbsp;".htmlspecialchars($row['country'])." </td>
     <td id='bank_sitename'> ".htmlspecialchars($row['bankname'])." </td> 
@@ -63,8 +62,24 @@ $q = mysqli_query($dbcon, "SELECT * FROM banks WHERE sold='0' ORDER BY RAND()")o
      ';
  }
 
- ?>
+	  ?>
+ </tbody>
+</table>
 <script type="text/javascript">
+$(document).ready(function() {
+ $('#banks_item').DataTable({
+ "lengthMenu": [
+ [10, 25, 100, 500, -1],
+  [10, 25, 100, 500, "All"] ],
+'iDisplayLength': 1000,
+            "aaSorting": []
+                });
+            });
+	</script>
+		</div>
+		</div>
+		</div>
+
 $('#filterbutton').click(function () {$("#table tbody tr").each(function() {var ck1 = $.trim( $(this).find("#bank_country").text().toLowerCase() );var ck2 = $.trim( $(this).find("#bank_sitename").text().toLowerCase() );var ck3 = $.trim( $(this).find("#bank_seller").text().toLowerCase() ); var val1 = $.trim( $('select[name="bank_country"]').val().toLowerCase() );var val2 = $.trim( $('input[name="bank_sitename"]').val().toLowerCase() );var val3 = $.trim( $('select[name="bank_seller"]').val().toLowerCase() ); if((ck1 != val1 && val1 != '' ) || ck2.indexOf(val2)==-1 || (ck3 != val3 && val3 != '' )){ $(this).hide();  }else{ $(this).show(); } });$('#filterbutton').prop('disabled', true);});$('.filterselect').change(function () {$('#filterbutton').prop('disabled', false);});$('.filterinput').keyup(function () {$('#filterbutton').prop('disabled', false);});
 function buythistool(id){
   bootbox.confirm("Are you sure?", function(result) {
