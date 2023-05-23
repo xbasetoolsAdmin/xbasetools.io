@@ -87,7 +87,13 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
  
 <body style="padding-top: 70px; padding-bottom: 70px;">
     
+    
+    </div>
+    
     <?php include"navbar_header.php";?>
+        </div>
+        </div>
+            </div>
     <?php include"ajax/banks_data.php";?>
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
