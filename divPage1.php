@@ -15,8 +15,8 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
                       <?php
                         include('cr.php'); 
 
-                        $query = "SELECT * FROM accounts";
-                        $q = mysqli_query($db, $query);
+                        $query = "SELECT * FROM accounts order by ";
+                        $q = mysqli_query($dbcon, $q);
                       ?>
                         <table class="table table-striped mt-4 ">
                             <thead>
