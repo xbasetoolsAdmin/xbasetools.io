@@ -440,7 +440,20 @@ a.closearb {
 <div class="alert alert-info text-left" role="alert" style="margin: 15px;">
 <ul>
 <li>For Any problem for account after buy just open report and seller will fix it or replace.</li>
-<li>There is <b> 104 </b> Accounts Available.</li>
+<li>There is <b> <?php
+ob_start();
+session_start();
+date_default_timezone_set('UTC');
+include "includes/config.php";
+
+if(!isset($_SESSION['sname']) and !isset($_SESSION['spass'])){
+   header("location: ../");
+   exit();
+}
+$usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
+
+$s1 = mysqli_query($dbcon, "SELECT * FROM ticket where status='1' and uid='$usrid'");
+$r1=mysqli_num_rows($s1);?> </b> Accounts Available.</li>
 </ul>
 </div>
 <input type=hidden id="cat" name="cat" value="1" />
