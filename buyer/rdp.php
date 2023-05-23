@@ -323,7 +323,7 @@ a.closearb {
 <div class="row d-flex justify-content-center align-items-center">
 <img src="layout/images/balance.png">
 <span class="pt-3 mx-4" style="font-size: 14 px"><b>No enough balance !</b> Please refill your balance</span>
-<a type="button" href="addBalance.html" onclick="window.open(this.href);return false;" class="btn btn-danger">Add Balance
+<a type="button" href="addBalance" onclick="window.open(this.href);return false;" class="btn btn-danger">Add Balance
 <i class="fas fa-book ml-1 white-text"></i>
 </a>
 <a type="button" class="btn btn-outline-danger waves-effect" data-dismiss="modal">No, thanks</a>
@@ -339,7 +339,7 @@ a.closearb {
 
                $(document).on('change', '.form-control', function(){
 
-                    $('#account_data').DataTable().destroy();
+                    $('#myTable').DataTable().destroy();
                 var country = $('#country').val();
                 var details = $('#infos').val();
                 var seller1 = $('#seller').val();
