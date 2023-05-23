@@ -1,3 +1,8 @@
+<?php include"../includes/config.php";?>
+<?php include"../ajax.php";?>
+
+
+
 <!DOCTYPE html>
 <html>
  
