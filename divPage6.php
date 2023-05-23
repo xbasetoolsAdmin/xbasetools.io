@@ -77,6 +77,7 @@ $q = mysqli_query($dbcon, "SELECT * FROM leads WHERE sold='0' ORDER BY RAND()")o
  }
 
 ?>
+                
             </tbody>
             </table>
             
