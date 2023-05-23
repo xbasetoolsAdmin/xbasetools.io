@@ -11,15 +11,13 @@ if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
 }
 $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 ?>
- 
 
-<style>
 <body class="them">
     </div>
     <?php include"navbar_header.php";?>
         </div>
         </div>
-            </div>
+
     <?php include"ajax/banks_data.php";?>
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
