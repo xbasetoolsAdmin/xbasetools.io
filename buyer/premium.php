@@ -1,21 +1,4 @@
-<?php
-function ambilKata($param, $kata1, $kata2){
-    if(strpos($param, $kata1) === FALSE) return FALSE;
-    if(strpos($param, $kata2) === FALSE) return FALSE;
-    $start = strpos($param, $kata1) + strlen($kata1);
-    $end = strpos($param, $kata2, $start);
-    $return = substr($param, $start, $end - $start);
-    return $return;
-}
-include "header.php";
-include "cr.php";
 
-$id = $_GET['id'];
-$myid = mysqli_real_escape_string($dbcon, $id);
-
-$get = mysqli_query($dbcon, "SELECT * FROM reports WHERE id='$myid'");
-$row = mysqli_fetch_assoc($get);
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -457,20 +440,7 @@ a.closearb {
 <div class="alert alert-info text-left" role="alert" style="margin: 15px;">
 <ul>
 <li>For Any problem for account after buy just open report and seller will fix it or replace.</li>
-<li>There is <b> <?php
-ob_start();
-session_start();
-date_default_timezone_set('UTC');
-include "includes/config.php";
-
-if(!isset($_SESSION['sname']) and !isset($_SESSION['spass'])){
-   header("location: ../");
-   exit();
-}
-$usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
-
-$s1 = mysqli_query($dbcon, "SELECT * FROM ticket where status='1' and uid='$usrid'");
-$r1=mysqli_num_rows($s1);?> </b> Accounts Available.</li>
+<li>There is <b> 104 </b> Accounts Available.</li>
 </ul>
 </div>
 <input type=hidden id="cat" name="cat" value="1" />
@@ -516,47 +486,6 @@ $r1=mysqli_num_rows($s1);?> </b> Accounts Available.</li>
 <th class="all">Buy</th>
 </tr>
 </thead>
-<thody>
-        
-
-<?php
-	///////////////// premium
- if ($rrrrx[‘acctype’] == “account”) {
-	 $itemid = $rrrrx[‘s_id’];
-$qe = mysqli_query($dbcon, “SELECT * FROM accounts WHERE id=‘$itemid’”) or die(mysql_error());
-while ($rowe = mysqli_fetch_assoc($qe))
-
- {
-
-$country = $rowe[‘country’];
-$site = $rowe[‘sitename’];
-$description = $rowe[‘infos’];
-$information = $rowe[‘url’];
-$price = $rowe[‘price’];
-$code = array_search(“$country”, $countrycodes);
-$countrycode = strtolower($code);
-?>
-
-<table class=“table”>
-<tr>
-
-  <td>
-
-  </td>
-  
- <td>
-  
-    <span class=“flag-icon flag-icon-<?php echo htmlspecialchars($countrycode); ?>”></span> <?php echo htmlspecialchars($country); ?>
-  
-  <?php echo ($description); ?>
-  
-<?php echo ($site); ?>
-  <td><?php echo ($information); ?>
-  <?php echo ($price); ?>$</td>
-        
-        
-        
-</tbody>
 </table>
 </div>
 </div>
@@ -644,7 +573,7 @@ $countrycode = strtolower($code);
                         ],
 
                         "ajax":{
-                            url:"divPage7.html",
+                            url:"divPage31.html",
                             type:"POST",
                             data:{
                              data_filter:myarray,
