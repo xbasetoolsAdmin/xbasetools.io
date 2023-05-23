@@ -225,8 +225,24 @@
                     <a class="dropdown-item" href="leads" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-award"></i> 100% Validated Leads <span class="badge badge-primary">0</span></span></a>
                 </div>
             </li>
- 
- 
+            
+            
+             <li class="nav-item dropdown mr-auto">
+                <a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-mail-bulk fa-sm pink-color"></i> Tutorials
+                </a>
+                <div class="dropdown-menu dropdown-menu-left" style="color: var(--font-color); background-color: var(--color-nav);" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="tutorials" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-award"></i> Tuto/methods <span class="badge badge-primary">0</span></span></a>
+                </div>
+            </li>
+            
+        
+             <li class="nav-item dropdown mr-auto">
+                <a class="nav-link dropdown-toggle" style="color: var(--font-color);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-mail-bulk fa-sm pink-color"></i> script/programs
+                </a>
+                <div class="dropdown-menu dropdown-menu-left" style="color: var(--font-color); background-color: var(--color-nav);" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="scampage" style="color: var(--font-color);"><span class="px-2"><i class="fas fa-award"></i> scampage <span class="badge badge-primary">0</span></span></a>
+                </div>
+            </li>
 <ul>
         <ul class="navbar-nav profile">
  
