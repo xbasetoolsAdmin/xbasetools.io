@@ -44,4 +44,47 @@ $query = mysqli_query($dbcon, "SELECT DISTINCT(`resseller`) FROM `banks` WHERE `
     </tr>
 </thead>
   </table>
-		
+			<script type="text/javascript">
+$(document).ready(function() {
+ $('#banks_item').DataTable({
+ "lengthMenu": [
+ [10, 25, 100, 500, -1],
+  [10, 25, 100, 500, "All"] ],
+'iDisplayLength': 1000,
+            "aaSorting": []
+                });
+            });
+$('#filterbutton').click(function () {$("#table tbody tr").each(function() {var ck1 = $.trim( $(this).find("#bank_country").text().toLowerCase() );var ck2 = $.trim( $(this).find("#bank_sitename").text().toLowerCase() );var ck3 = $.trim( $(this).find("#bank_seller").text().toLowerCase() ); var val1 = $.trim( $('select[name="bank_country"]').val().toLowerCase() );var val2 = $.trim( $('input[name="bank_sitename"]').val().toLowerCase() );var val3 = $.trim( $('select[name="bank_seller"]').val().toLowerCase() ); if((ck1 != val1 && val1 != '' ) || ck2.indexOf(val2)==-1 || (ck3 != val3 && val3 != '' )){ $(this).hide();  }else{ $(this).show(); } });$('#filterbutton').prop('disabled', true);});$('.filterselect').change(function () {$('#filterbutton').prop('disabled', false);});$('.filterinput').keyup(function () {$('#filterbutton').prop('disabled', false);});
+function buythistool(id){
+  bootbox.confirm("Are you sure?", function(result) {
+        if(result ==true){
+      $.ajax({
+     method:"GET",
+     url:"buytool.php?id="+id+"&t=banks",
+     dataType:"text",
+     success:function(data){
+         if(data.match(/<button/)){
+		 $("#bank"+id).html(data).show();
+         }else{
+            bootbox.alert('<center><img src="files/img/balance.png"><h2><b>No enough balance !</b></h2><h4>Please refill your balance <a class="btn btn-primary btn-xs"  href="addBalance.html" onclick="window.open(this.href);return false;" >Add Balance <span class="glyphicon glyphicon-plus"></span></a></h4></center>')
+         }
+     },
+   });
+       ;}
+  });
+}
+
+function openitem(order){
+  $("#myModalLabel").text('Order #'+order);
+  $('#myModal').modal('show');
+  $.ajax({
+    type:       'GET',
+    url:        'showOrder'+order+'.html',
+    success:    function(data)
+    {
+        $("#modelbody").html(data).show();
+    }});
+
+}
+
+</script>
