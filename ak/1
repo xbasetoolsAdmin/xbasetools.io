@@ -2,7 +2,7 @@
 function gtag() {
     dataLayer.push(arguments);
 }
-gtag('js',
+gtag('js', 
 new Date());
 gtag('set',
 {
