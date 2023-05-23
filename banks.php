@@ -9,17 +9,12 @@ if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
     header("location: ../");
     exit();
 }
-$usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
-?>
-<style>
-     <?php include"display/banks_logs.php";?>
-    </div>
-    <?php include"navbar_header.php";?>
-   </div>
-        </div>
-    <?php include"ajax/banks_data.php";
-    
-    ?>
+$usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']); ?>
+<?php 
+include"display/banks_logs.php";
+include"navbar_header.php";
+include"ajax/banks_data.php";
+ ?>
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -39,7 +34,7 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 <script type="text/javascript" src="component/main.js">
 </script>
 <script type="text/javascript">
-	 $(document).ready(function() {
+ $(document).ready(function() {
  $('#banks_item').DataTable({
  "lengthMenu": [
  [10, 25, 100, 500, -1],
