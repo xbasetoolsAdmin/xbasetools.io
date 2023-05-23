@@ -32,18 +32,6 @@ include"ajax/banks_data.php";
   </div>
 </div>   
 <script type="text/javascript" src="component/main.js"></script>
-<script type="text/javascript">
- $(document).ready(function() {
- $('#banks_item').DataTable({
- "lengthMenu": [
- [10, 25, 100, 500, -1],
-  [10, 25, 100, 500, "All"] ],
-'iDisplayLength': 1000,
- "aaSorting": []  });
-            });
-
-    </script>
-    
-    
+    <?php include"footer.php";?>
     </body>
     </html>
