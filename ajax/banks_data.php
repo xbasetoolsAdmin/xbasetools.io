@@ -1,5 +1,14 @@
 <?php ob_start(); session_start(); date_default_timezone_set('UTC'); include "includes/config.php"; if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {    header("location: login.html");    exit(); } $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']); ?> 
  
+	
+    <div class="alert alert-info text-left" role="alert" style="margin: 15px;">
+        <ul>
+            <li>We Have Fresh Bank Logs with  E-mails Access  for Diffrents Countries ( You Can Use it for Spam ). </li>
+            <li>Our E-mails Lists Guarante for you Good results because most of them are from Shops and Big Sites .</li>
+            <li>Combo use for cracking (Brute forcing attack) not use for login to email.</li>
+            <li>There is <b> 0 </b> Available.</li>
+        </ul>
+    </div>
 <ul class="nav nav-tabs">
   <li class="active"><a href="#filter" data-toggle="tab">Filter</a></li>
 </ul>
