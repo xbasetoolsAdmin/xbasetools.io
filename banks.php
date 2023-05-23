@@ -13,6 +13,8 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
 ?>
 <style>
 <?php include"display/banks_table_filter.php";?>
+
+
     </div>
     <?php include"navbar_header.php";?>
         </div>
@@ -21,7 +23,8 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
         </div>
     <?php include"ajax/banks_data.php";
     
-    ?><div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    ?>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
